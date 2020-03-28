@@ -1813,23 +1813,8 @@ Partner CSS
     padding-top: 76px;
 }
 
-
-
-/*slider starts*/
-#creator .showSlide {
-    display: none
-}
-
-#creator .slidercontainer {
-    position: relative;
-    height: 100vh;
-    display: grid;
-    align-items: center;
-    overflow: hidden;
-}
-
-.slidercontainer .left,
-.slidercontainer .right {
+/*controls*/
+ .left,.right {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -1843,56 +1828,15 @@ Partner CSS
     border-radius: 0 3px 3px 0;
 }
 
-.slidercontainer .right {
+.right {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-.slidercontainer .left:hover,
-.slidercontainer .right:hover {
+.left:hover,.right:hover {
     background-color: #f90;
 }
 
-.slidercontainer .content {
-    color: #000;
-    font-size: 30px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-/*slider ends*/
 
 
 /* Images */
@@ -1912,94 +1856,140 @@ Partner CSS
     grid-row: 1;
 }
 
-.img-container img.bulb{
+.bulb{
     position: relative;
     left: 31%;
     bottom: 12%;
 }
 
-.img-container img.filament{
+.filament{
     position: relative;
     left: 33%;
     bottom: 6%;
+    transition: all 1s linear;
 }
 
-.img-container img.base{
+.creator .filament {
+    left: 36%;
+    bottom: -16%;
+}
+
+.base{
     position: relative;
     left: 30%;
     top: 70%;
+    transition: all 1s linear;
 }
 
-.img-container img.filament2{
-    position: relative;
-    top: 16%;
-    left: 36%;
-}
-
-.img-container img.base2{
-    position: relative;
-    left: 40%;
+.creator .base{
+    left: 39.5%;
     top: 55%;
 }
 
-.img-container img.creator{
+.creator1{
     position: relative;
     left: 27%;
     top: 34%;
     z-index: -1;
-    transform: translateX(-500px) scale(0);
+    transform: translateX(-500px) scale(0) rotate(-65deg);
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 0.5s ease-in-out;
-    opacity: 0.5;
+    transition: all 2.5s ease-in-out;
+    opacity: 0.3;
 }
 
-.img-container img.creator.animate,
-.img-container img.box.animate{
-    transform: translateX(0) scale(1);
+.creator .creator1 {
+    transform: translateX(0) scale(1) rotate(0deg);
     opacity: 1;
 }
 
-.img-container img.gear1{
+.gear1{
     position: relative;
     left: 20%;
     top: 10%;
+    transform: translateY(-200px);
+    transition: all 2s ease-in-out;
+    opacity: 0.2;
 }
 
-.img-container img.gear2{
+.creator .gear1, .creator .gear2,.creator .gear3,.creator .gear4,
+.creator .box, .creator .panel{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.gear2{
     position: relative;
     left: 18%;
     top: 34%;
+    transform: translateY(-400px);
+    opacity: 0.3;
+    transition: all 2s ease-in-out;
 }
 
-.img-container img.gear3{
+.gear3{
     left: 56%;
     top: 40%;
     position: relative;
+    transform: translateY(-400px);
+    opacity: 0.3;
+    transition: all 2s ease-in-out;
 }
 
-.img-container img.gear4{
+.gear4{
     position: relative;
     left: 62%;
     top: 22%;
+    transform: translateY(-400px);
+    opacity: 0.3;
+    transition: all 2s ease-in-out;
 }
 
-.img-container img.box{
+.box{
     position: relative;
     top: 90%;
     left: 5%;
-    transform: translateY(300px);
-    transition: all 0.5s linear;
+    transform: translateY(200px);
+    transition: all 2s ease-in;
+    opacity: 0;
 }
 
-.img-container img.panel{
+.panel{
     position: relative;
     left: 68%;
     top: 33%;
+    transform: translateY(100px);
+    transition: all 2s ease-in;
+    opacity: 0;
 }
 
-.img-container img.light-bulb{
+
+.content-right .text2 .lead{
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.content-right{
+    display: grid;
+    align-items: center;
+}
+
+.content-right .text1,.content-right .text2{
+    grid-row: 1;
+    grid-column: 1;
+    transition: all 0.5s ease-in;
+}
+
+.hide{
+    visibility: hidden;
+    opacity: 0;
     
 }
+
+.show{
+    visibility: visible;
+    opacity: 1;
+}
+
 
 
 
