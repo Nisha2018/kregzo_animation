@@ -1312,8 +1312,12 @@ iframe {
     position: absolute;
     width: 150px;
     height: 150px;
-    top: 15vh;
-    right: 42%;
+    top: 2%;
+    right: 80%;
+}
+
+.creator-view .spinner-eff {
+    top: 20%;
 }
 
 .spinner-eff .spinner-circle {
@@ -1635,7 +1639,7 @@ Ready To Talk CSS
 }*/
 
 #home{
-    padding-top: 138px;
+    padding-top: 125px;
     overflow: hidden;
 }
 
@@ -1892,7 +1896,7 @@ Partner CSS
     top: 83%;
     left: 28%;
     z-index: 2;
-    opacity: 0.2;
+    opacity: 0;
     visibility: hidden;
     transform: translateY(300px);
     transition: all 1s ease-in;
@@ -1946,7 +1950,7 @@ Partner CSS
     position: relative;
     left: 20%;
     top: 10%;
-    transform: translateY(-200px);
+    transform: translateY(-800px);
     transition: all 2s ease-in-out;
     opacity: 0.2;
 }
@@ -2100,6 +2104,7 @@ Partner CSS
     display: grid;
     align-items: center;
     padding-top: 50px;
+    position: relative;
 }
 
 .content-right .text1,.content-right .text2,.content-right .text3,
