@@ -1147,10 +1147,10 @@ iframe {
 .wave-animation {
     display: block;
     width: 100%;
-    height: 8em;
+    height: 5em;
     max-height: 100vh;
     margin: 0;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
 }
@@ -1636,6 +1636,7 @@ Ready To Talk CSS
 
 #home{
     padding-top: 138px;
+    overflow: hidden;
 }
 
 #home .btn-primary,
@@ -1814,7 +1815,7 @@ Partner CSS
 }
 
 /*controls*/
- .left,.right {
+ .left,.right,.left1,.right1 {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -1828,13 +1829,14 @@ Partner CSS
     border-radius: 0 3px 3px 0;
 }
 
-.right {
+.right,.right1 {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-.left:hover,.right:hover {
+.left:hover,.right:hover ,a:not([href]):hover{
     background-color: #f90;
+    color: #fff;
 }
 
 
@@ -1842,36 +1844,35 @@ Partner CSS
 /* Images */
 .img-container{
     display: grid;
-    justify-content: center;
+    justify-content: start;
 }
 
-#home .img-container{
-    position: relative;
-    bottom: 50px;
-    right: 12%;
-}
 
 .img-container img{
     grid-column: 2;
     grid-row: 1;
 }
 
+.background{
+    width: 100%;
+}
+
 .bulb{
     position: relative;
     left: 31%;
-    bottom: 12%;
+    bottom: -3%;
 }
 
 .filament{
     position: relative;
     left: 33%;
-    bottom: 6%;
+    bottom: -10%;
     transition: all 1s linear;
 }
 
-.creator .filament {
+.creator-view .filament {
     left: 36%;
-    bottom: -16%;
+    bottom: -31%;
 }
 
 .base{
@@ -1881,25 +1882,64 @@ Partner CSS
     transition: all 1s linear;
 }
 
-.creator .base{
+.creator-view .base{
     left: 39.5%;
-    top: 55%;
+    top: 70%;
+}
+
+.wire1,.wire2,.wire3,.wire4{
+    position: relative;
+    top: 83%;
+    left: 28%;
+    z-index: 2;
+    opacity: 0.2;
+    visibility: hidden;
+    transform: translateY(300px);
+    transition: all 1s ease-in;
+}
+
+.wire2{
+    left: 25%;
+    top: 85%;
+    z-index: 3;
+    transition: all 2s ease-in;
+}
+
+.wire3{
+    top: 64%;
+    left: 47%;
+    transition: all 2.5s ease-in;
+}
+
+.wire4{
+    left: 45%;
+    top: 73%;
+    transition: all 3s ease-in;
 }
 
 .creator1{
     position: relative;
-    left: 27%;
-    top: 34%;
+    left: 24%;
+    top: 39%;
     z-index: -1;
     transform: translateX(-500px) scale(0) rotate(-65deg);
     -webkit-transition: all 0.5s ease-in-out;
-    transition: all 2.5s ease-in-out;
-    opacity: 0.3;
+    transition: all 2.5s ease-in;
+    opacity: 0;
 }
 
-.creator .creator1 {
+.creator2{
+    position: relative;
+    left: 20%;
+    top: 40%;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.creator-view .creator1,.mentor-view .creator2 {
     transform: translateX(0) scale(1) rotate(0deg);
     opacity: 1;
+    visibility: visible;
 }
 
 .gear1{
@@ -1911,9 +1951,58 @@ Partner CSS
     opacity: 0.2;
 }
 
-.creator .gear1, .creator .gear2,.creator .gear3,.creator .gear4,
-.creator .box, .creator .panel{
+.creator-view .gear1, .creator-view .gear2,.creator-view .gear3,.creator-view .gear4,
+.creator-view .box, .creator-view .panel,.mentor-view .wire1,.mentor-view .wire2,
+.mentor-view .wire3,.mentor-view .wire4{
     transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.mentor-view .creator1{
+    opacity: 0;
+}
+
+.investor,.cheque{
+    position: relative;
+    left: 42%;
+    top: 47%;
+    z-index: 8;
+    transform: translateX(500px) rotate(65deg);
+    transition: all 1.5s ease-in-out;
+    opacity: 0.3;
+    visibility: hidden;
+}
+
+.cheque {
+    position: relative;
+    top: 76%;
+    left: 29.5%;
+    z-index: 8;
+}
+
+.investor-view .investor,.investor-view .cheque{
+    transform: translateX(0px) rotate(0deg);
+    opacity: 1;
+    visibility: visible;
+}
+
+.creator3{
+    position: relative;
+    top: 38%;
+    left: 24%;
+    z-index: -1;
+    visibility: hidden;
+    opacity: 0.2; 
+    transition: all 0.5s linear;   
+}
+
+.investor-view .creator2{
+    visibility: hidden;
+}
+
+.investor-view .creator3{
+    visibility: visible;
     opacity: 1;
 }
 
@@ -1924,6 +2013,7 @@ Partner CSS
     transform: translateY(-400px);
     opacity: 0.3;
     transition: all 2s ease-in-out;
+    z-index: -1;
 }
 
 .gear3{
@@ -1951,19 +2041,57 @@ Partner CSS
     transform: translateY(200px);
     transition: all 2s ease-in;
     opacity: 0;
+    z-index: 1;
 }
 
 .panel{
     position: relative;
-    left: 68%;
-    top: 33%;
+    left: 63%;
+    top: 38%;
     transform: translateY(100px);
     transition: all 2s ease-in;
     opacity: 0;
 }
 
+.light-bulb{
+    position: relative;
+    left: 29%;
+    bottom: 12%;
+    opacity: 0;
+    transition: all 1s linear;
+}
 
-.content-right .text2 .lead{
+.mentor-view .light-bulb{
+    opacity: 1;
+}
+
+.mentor2{
+    position: relative;
+    left: 73%;
+    top: 37%;
+    transform: translateX(450px) scale(0) rotate(55deg);
+    transition: all 1.5s ease-in;
+    opacity: 0;
+}
+
+.mentor1{
+    position: relative;
+    top: 60%;
+    right: 5%;
+    transform: translateX(-400px) scale(0) rotate(-65deg);
+    transition: all 1.5s ease-in;
+    opacity: 0;
+    z-index: 3;
+}
+
+.mentor-view .mentor1,.mentor-view .mentor2 {
+    transform: translateX(0) scale(1) rotate(0deg);
+    opacity: 1;
+}
+
+
+.content-right .text2 .lead,.content-right .text3 .lead,
+.content-right .text4 .lead{
     line-height: 1.5;
     font-size: 16px;
 }
@@ -1971,13 +2099,33 @@ Partner CSS
 .content-right{
     display: grid;
     align-items: center;
+    padding-top: 50px;
 }
 
-.content-right .text1,.content-right .text2{
+.content-right .text1,.content-right .text2,.content-right .text3,
+.content-right .text4{
     grid-row: 1;
     grid-column: 1;
     transition: all 0.5s ease-in;
 }
+
+.content-right .text2,.content-right .text3,
+.content-right .text4{
+    transform: translateY(100px);
+    opacity: 0.3;
+}
+
+.creator-view .text1,.creator-view.mentor-view .text2,.mentor-view.investor-view .text3{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.creator-view .text2,.mentor-view .text3,.mentor-view.investor-view .text4{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
 
 .hide{
     visibility: hidden;
@@ -1985,10 +2133,6 @@ Partner CSS
     
 }
 
-.show{
-    visibility: visible;
-    opacity: 1;
-}
 
 
 
