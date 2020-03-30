@@ -2141,7 +2141,6 @@ Partner CSS
 .content-right .text2,.content-right .text3,
 .content-right .text4{
     transform: translateY(100px);
-    opacity: 0.3;
 }
 
 .creator-view .text1,.creator-view.mentor-view .text2,.mentor-view.investor-view .text3{
