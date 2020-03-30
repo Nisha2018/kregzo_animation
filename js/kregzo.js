@@ -1,15 +1,22 @@
 let next = document.querySelector('.right');
 let prev = document.querySelector('.left');
-let next1 = document.querySelector('.right1');
-let prev1 = document.querySelector('.left1');
+let container = document.querySelector('#home');
 
-next.addEventListener("click", () => {
-	document.querySelector('#home').classList.add('creator-view');
+const nextView = () => {
+	for(i=0;i<next.length; i++){
+		next[i].addEventListener('click',() => {
+			container.classList.add('creator-view');
+			container.classList.add('mentor-view');
+			container.classList.add('investor-view');
+		});
+	}
+	
+};
+
+next.addEventListener('click', () => {
+	nextView();
 });
 
-prev.addEventListener("click",() => {
-	document.querySelector('#home').classList.remove('creator-view');
-});
 
 
 
