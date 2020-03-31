@@ -919,14 +919,14 @@
     .wire3,
     .wire4 {
         top: 13px;
-    left: 87px;
+        left: 87px;
         position: absolute;
         z-index: 1;
     }
 
     .wire2 {
         left: 72px;
-    top: 15px;
+        top: 15px;
     }
 
     .wire3 {
@@ -936,7 +936,7 @@
 
     .wire4 {
         left: 44%;
-    top: -12px;
+        top: -12px;
     }
 
 
@@ -1338,6 +1338,11 @@
 
     #home {
         padding-top: 150px;
+    }
+
+    .left,
+    .right {
+        top: 42%;
     }
 }
 
