@@ -1632,10 +1632,9 @@ Ready To Talk CSS
 }
 
 
-/*#home{
-    padding-top: 125px;
+#home{
     overflow: hidden;
-}*/
+}
 
 #home .btn-primary,
 #creator .btn-primary {
