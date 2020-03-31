@@ -1888,57 +1888,42 @@ Partner CSS
     top: 70%;
 }
 
-/*.mentor-view .wire1,.mentor-view .wire2,.mentor-view .wire3,
-.mentor-view .wire4{
-    visibility: visible;
-}*/
-
-/*.mentor-view .wire1{
-    height: 81px;
-}
-
-.mentor-view .wire2{
-    height: 92px;
-}
-
-.mentor-view .wire3{
-    height: 92px;
-}
-
-.mentor-view .wire4{
-    height: 102px;
-}*/
-
 .wires{
-    grid-column: 2;
-    grid-row: 1;
+    position: absolute;
+    top: 72%;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    z-index: 5;
+    transition: height 5s linear;
+}
+
+.mentor-view .wires{
+    overflow: auto;
+    height: 1000px;
+    transition: height 10s linear;
 }
 
 .wire1,.wire2,.wire3,.wire4{
-    position: relative;
-    top: 83%;
-    left: 28%;
-    z-index: 2;
+    top: 24px;
+    left: 120px;
+    position: absolute;
+    z-index: 1;
 }
 
-
 .wire2{
-    left: 25%;
-    top: 85%;
-    z-index: 3;
-    transition: all 2s ease-in;
+    left: 106px;
+    top: 27px;
 }
 
 .wire3{
-    top: 64%;
-    left: 47%;
-    transition: all 2.5s ease-in;
+    left: 35%;
+    top: -17px;
 }
 
 .wire4{
-    left: 45%;
-    top: 73%;
-    transition: all 3s ease-in;
+    left: 33%;
+    top: 0%;
 }
 
 .creator1{
