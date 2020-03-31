@@ -1631,9 +1631,6 @@ Ready To Talk CSS
     font-size: 16px;
 }
 
-/*.ready-to-talk .btn::before, .ready-to-talk .btn::after {
-  background: #ffffff;
-}*/
 
 #home{
     padding-top: 125px;
@@ -1891,12 +1888,12 @@ Partner CSS
     top: 70%;
 }
 
-.mentor-view .wire1,.mentor-view .wire2,.mentor-view .wire3,
+/*.mentor-view .wire1,.mentor-view .wire2,.mentor-view .wire3,
 .mentor-view .wire4{
     visibility: visible;
-}
+}*/
 
-.mentor-view .wire1{
+/*.mentor-view .wire1{
     height: 81px;
 }
 
@@ -1910,6 +1907,11 @@ Partner CSS
 
 .mentor-view .wire4{
     height: 102px;
+}*/
+
+.wires{
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .wire1,.wire2,.wire3,.wire4{
@@ -1917,9 +1919,6 @@ Partner CSS
     top: 83%;
     left: 28%;
     z-index: 2;
-    visibility: hidden;
-    transition: all 1s linear;
-    height: 0;
 }
 
 

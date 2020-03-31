@@ -422,7 +422,6 @@ $(document).ready(function() {
     fullScreen(),
     menu(),
     owlcarousel(),
-    counter(),
     testimonialcarousel(),
     magnificpopup(),
     scrolltop(),
