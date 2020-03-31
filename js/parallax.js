@@ -63,3 +63,15 @@ function previousItem() {
   var $currentSlide = $(".background").eq(currentSlideNumber);
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
 }
+
+
+let mouse = document.querySelector(".mouse-icon");
+
+mouse.addEventListener("click",() => {
+  console.log("clicked");
+  if (currentSlideNumber === 0){
+    var $currentSlide = $(".background").eq(currentSlideNumber);
+    $currentSlide.addClass("down-scroll");
+  }
+  
+});
