@@ -1632,10 +1632,10 @@ Ready To Talk CSS
 }
 
 
-#home{
+/*#home{
     padding-top: 125px;
     overflow: hidden;
-}
+}*/
 
 #home .btn-primary,
 #creator .btn-primary {
@@ -1827,6 +1827,7 @@ Partner CSS
     border-radius: 0 3px 3px 0;
     background: transparent;
     border: none;
+    z-index: 20;
 }
 
 .right {
@@ -1853,10 +1854,6 @@ Partner CSS
     grid-row: 1;
 }
 
-.background{
-    width: 100%;
-}
-
 .bulb{
     position: relative;
     left: 31%;
@@ -1869,6 +1866,10 @@ Partner CSS
     bottom: -10%;
     z-index: 2;
     transition: all 1s linear;
+}
+
+.area{
+    width: 100%;
 }
 
 .creator-view .filament {
@@ -1895,7 +1896,7 @@ Partner CSS
     height: 0px;
     overflow: hidden;
     z-index: 5;
-    transition: height 5s linear;
+    transition: height 2s linear;
 }
 
 .mentor-view .wires{
@@ -2032,7 +2033,7 @@ Partner CSS
     left: 56%;
     top: 40%;
     position: relative;
-    transform: translateY(-400px);
+    transform: translateY(-600px);
     opacity: 0.3;
     transition: all 2s ease-in-out;
 }
@@ -2146,6 +2147,128 @@ Partner CSS
     opacity: 0;
     
 }
+
+
+/*parallax starts*/
+
+#main-container {
+    overflow: hidden;
+    position: relative;
+    height: 100vh;
+}
+
+.background {
+    /*background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;*/
+    overflow: hidden;
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    height: 130vh;
+    position: fixed;
+    width: 100%;
+    -webkit-transform: translateY(100vh);
+    transform: translateY(100vh);
+    -webkit-transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+    transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+
+/* Set stacking context of slides */
+.background:nth-child(1) {
+    z-index: 5;
+    -webkit-transform: translateY(-15vh);
+    transform: translateY(-15vh);
+}
+
+.background:first-child .content-wrapper {
+    -webkit-transform: translateY(20vh);
+    transform: translateY(20vh);
+}
+
+.background:first-child.up-scroll .content-wrapper {
+    -webkit-transform: translateY(20vh);
+    transform: translateY(20vh);
+}
+
+.background:nth-child(2) {
+    z-index: 4;
+}
+
+.background:nth-child(3) {
+    z-index: 3;
+}
+
+.background:nth-child(4) {
+    z-index: 2;
+}
+
+.background:nth-child(5) {
+    z-index: 1;
+}
+
+.content-wrapper {
+    height: 100vh;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-flow: column nowrap;
+    -webkit-transform: translateY(40vh);
+    transform: translateY(40vh);
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+    transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+}
+
+.background.up-scroll {
+    -webkit-transform: translate3d(0, -15vh, 0);
+    transform: translate3d(0, -15vh, 0);
+}
+
+.background.up-scroll .content-wrapper {
+    -webkit-transform: translateY(15vh);
+    transform: translateY(15vh);
+}
+
+.background.up-scroll+.background {
+    -webkit-transform: translate3d(0, 100vh, 0);
+    transform: translate3d(0, 100vh, 0);
+}
+
+.background.up-scroll+.background .content-wrapper {
+    -webkit-transform: translateY(50vh);
+    transform: translateY(50vh);
+}
+
+.background.down-scroll {
+    -webkit-transform: translate3d(0, -130vh, 0);
+    transform: translate3d(0, -130vh, 0);
+}
+
+.background.down-scroll .content-wrapper {
+    -webkit-transform: translateY(40vh);
+    transform: translateY(40vh);
+}
+
+.background.down-scroll+.background:not(.down-scroll) {
+    -webkit-transform: translate3d(0, -15vh, 0);
+    transform: translate3d(0, -15vh, 0);
+}
+
+.background.down-scroll+.background:not(.down-scroll) .content-wrapper {
+    -webkit-transform: translateY(15vh);
+    transform: translateY(15vh);
+}
+
+
+/*parallax ends*/
+
 
 
 

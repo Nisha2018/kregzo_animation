@@ -915,17 +915,30 @@
     }
 
     .wire1,
+    .wire2,
+    .wire3,
+    .wire4 {
+        top: 13px;
+    left: 87px;
+        position: absolute;
+        z-index: 1;
+    }
+
     .wire2 {
-        top: 80%;
+        left: 72px;
+    top: 15px;
     }
 
     .wire3 {
-        top: 59%;
+        left: 46%;
+        top: -33px;
     }
 
     .wire4 {
-        top: 65%;
+        left: 44%;
+    top: -12px;
     }
+
 
     .mentor1 {
         width: 100px;
@@ -1321,6 +1334,10 @@
 @media (max-width: 992px) {
     .img-container {
         justify-content: center;
+    }
+
+    #home {
+        padding-top: 150px;
     }
 }
 

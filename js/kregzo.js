@@ -21,21 +21,11 @@ next.addEventListener("click", () => {
         next.style.backgroundColor = "#ede8e8";
         prev.disabled = false;
         prev.style.backgroundColor="#f90";
+        prev.style.color="#fff";
         
     } 
 
-    // else if(counter === 4) {
-
-    //         next.disabled = true;
-    //         next.style.backgroundColor = "#ede8e8";
-
-
-
-    // }
-
 });
-
-// 
 
 
 prev.addEventListener("click", () => {
@@ -54,6 +44,7 @@ prev.addEventListener("click", () => {
         prev.style.backgroundColor = "#ede8e8";
         next.disabled = false;
         next.style.backgroundColor="#f90";
+        next.style.color = "#fff";
 
     } 
 
