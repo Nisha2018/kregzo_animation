@@ -1666,7 +1666,7 @@ Ready To Talk CSS
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 1%;
+    bottom: 12%;
     z-index: 99;
 }
 
@@ -1820,7 +1820,7 @@ Partner CSS
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: grey;
+    color: #036;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
