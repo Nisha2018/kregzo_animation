@@ -194,8 +194,8 @@ p {
 
 .lead {
     font-weight: normal;
-    font-size: 20px;
-    line-height: 15px;
+    font-size: 16px;
+    line-height: 30px;
 }
 
 .o-hidden {
@@ -1314,7 +1314,7 @@ iframe {
 }
 
 .creator-view .spinner-eff {
-    top: 20%;
+    top: 17%;
 }
 
 .spinner-eff .spinner-circle {
@@ -1636,16 +1636,14 @@ Ready To Talk CSS
     overflow: hidden;
 }
 
-#home .btn-primary,
-#creator .btn-primary {
+.btn-primary {
     background: #f90;
     color: #fff;
     padding: 15px 25px;
     /*  border-radius: 30px;*/
 }
 
-#home .btn-primary:hover,
-#creator .btn-primary:hover {
+.btn.btn-primary:hover{
     background: #036;
 }
 
@@ -1809,6 +1807,11 @@ Partner CSS
 
 .about .aboutus {
     padding-top: 76px;
+}
+
+.section-title h2.about-heading{
+    font-size: 25px;
+    letter-spacing: 1px;
 }
 
 /*controls*/
@@ -2115,13 +2118,6 @@ Partner CSS
     opacity: 1;
 }
 
-
-.content-right .text2 .lead,.content-right .text3 .lead,
-.content-right .text4 .lead{
-    line-height: 1.5;
-    font-size: 16px;
-}
-
 .content-right{
     display: grid;
     align-items: center;
@@ -2131,6 +2127,7 @@ Partner CSS
 
 .content-right .text1,.content-right .text2,.content-right .text3,
 .content-right .text4{
+    display: grid;
     grid-row: 1;
     grid-column: 1;
     transition: all 0.5s ease-in;

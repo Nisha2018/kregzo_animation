@@ -20,8 +20,11 @@ function parallaxScroll(evt) {
         delta = evt.wheelDelta;
     }
 
+    var touchobj = evt.changedTouches[0];
+    var dist = parseInt(touchobj.clientX) - startx;
+
     if (ticking != true) {
-        if (delta <= -scrollSensitivitySetting) {
+        if (delta <= -scrollSensitivitySetting && dist <= -scrollSensitivitySetting) {
             //Down scroll
             ticking = true;
             if (currentSlideNumber !== totalSlideNumber - 1) {
@@ -30,7 +33,7 @@ function parallaxScroll(evt) {
             }
             slideDurationTimeout(slideDurationSetting);
         }
-        if (delta >= scrollSensitivitySetting) {
+        if (delta >= scrollSensitivitySetting && dist >= scrollSensitivitySetting) {
             //Up scroll
             ticking = true;
             if (currentSlideNumber !== 0) {
@@ -64,6 +67,17 @@ function previousItem() {
     $currentSlide.removeClass("down-scroll").addClass("up-scroll");
 }
 
+var startx = 0;
+var dist = 0;
+window.addEventListener('load', function() {
+    window.addEventListener('touchstart', function(e) {
+        var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+        startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
+        e.preventDefault();
+    }, false);
+    window.addEventListener('touchmove', _.throttle(parallaxScroll, 60), false);
+}, false);
+
 // scroll down button
 let mouse = document.querySelector(".mouse-icon");
 
@@ -74,7 +88,3 @@ mouse.addEventListener("click", () => {
     }
 
 });
-
-
-
-
