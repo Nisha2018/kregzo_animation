@@ -67,18 +67,26 @@ function previousItem() {
 // scroll down button
 let mouse = document.querySelectorAll(".mouse-icon");
 
-mouse[0].addEventListener("click", () => {
+for(let i=0; i<mouse.length;i++){
+mouse[i].addEventListener("click", () => {
     if (currentSlideNumber === 0) {
+        var $currentSlide = $(".background").eq(currentSlideNumber);
+        $currentSlide.addClass("down-scroll");
+        currentSlideNumber++;
+    }
+    else if(currentSlideNumber === 1){
+        var $currentSlide = $(".background").eq(currentSlideNumber);
+        $currentSlide.addClass("down-scroll");
+        currentSlideNumber++;
+    }
+
+    else{
         var $currentSlide = $(".background").eq(currentSlideNumber);
         $currentSlide.addClass("down-scroll");
     }
 });
+}
 
-mouse[1].addEventListener("click", () => {
-    if (currentSlideNumber === 1) {
-        nextItem();
-    }
-});
 
 
 // mobile view

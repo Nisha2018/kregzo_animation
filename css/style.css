@@ -1636,6 +1636,10 @@ Ready To Talk CSS
     overflow: hidden;
 }
 
+#blog{
+    padding-top: 300px;
+}
+
 .btn-primary {
     background: #f90;
     color: #fff;
