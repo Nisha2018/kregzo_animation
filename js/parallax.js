@@ -9,69 +9,70 @@ var totalSlideNumber = $(".background").length;
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt) {
-  if (isFirefox) {
-    //Set delta for Firefox
-    delta = evt.detail * (-120);
-  } else if (isIe) {
-    //Set delta for IE
-    delta = -evt.deltaY;
-  } else {
-    //Set delta for all other browsers
-    delta = evt.wheelDelta;
-  }
+    var touchobj = evt.changedTouches[0];
+    var dist = parseInt(touchobj.clientX) - startx;
 
-  if (ticking != true) {
-    if (delta <= -scrollSensitivitySetting) {
-      //Down scroll
-      ticking = true;
-      if (currentSlideNumber !== totalSlideNumber - 1) {
-        currentSlideNumber++;
-        nextItem();
-      }
-      slideDurationTimeout(slideDurationSetting);
+    if (ticking != true) {
+        if (dist <= -scrollSensitivitySetting) {
+            //Down scroll
+            ticking = true;
+            if (currentSlideNumber !== totalSlideNumber - 1) {
+                currentSlideNumber++;
+                nextItem();
+            }
+            slideDurationTimeout(slideDurationSetting);
+        }
+        if (dist >= scrollSensitivitySetting) {
+            //Up scroll
+            ticking = true;
+            if (currentSlideNumber !== 0) {
+                currentSlideNumber--;
+            }
+            previousItem();
+            slideDurationTimeout(slideDurationSetting);
+        }
     }
-    if (delta >= scrollSensitivitySetting) {
-      //Up scroll
-      ticking = true;
-      if (currentSlideNumber !== 0) {
-        currentSlideNumber--;
-      }
-      previousItem();
-      slideDurationTimeout(slideDurationSetting);
-    }
-  }
 }
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
-  setTimeout(function() {
-    ticking = false;
-  }, slideDuration);
+    setTimeout(function() {
+        ticking = false;
+    }, slideDuration);
 }
 
-// ------------- ADD EVENT LISTENER ------------- //
-var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
-
 // ------------- SLIDE MOTION ------------- //
+
 function nextItem() {
-  var $previousSlide = $(".background").eq(currentSlideNumber - 1);
-  $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+    var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+    $previousSlide.removeClass("up-scroll").addClass("down-scroll");
 }
 
 function previousItem() {
-  var $currentSlide = $(".background").eq(currentSlideNumber);
-  $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+    var $currentSlide = $(".background").eq(currentSlideNumber);
+    $currentSlide.removeClass("down-scroll").addClass("up-scroll");
 }
 
+var startx = 0;
+var dist = 0;
+window.addEventListener('load', function() {
+    window.addEventListener('touchstart', function(e) {
+        var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+        startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
+        e.preventDefault();
+    }, false);
+    window.addEventListener('touchmove', _.throttle(parallaxScroll, 60), false);
+}, false);
 
+
+
+// scroll down button
 let mouse = document.querySelector(".mouse-icon");
 
-mouse.addEventListener("click",() => {
-  console.log("clicked");
-  if (currentSlideNumber === 0){
-    var $currentSlide = $(".background").eq(currentSlideNumber);
-    $currentSlide.addClass("down-scroll");
-  }
-  
+mouse.addEventListener("click", () => {
+    if (currentSlideNumber === 0) {
+        var $currentSlide = $(".background").eq(currentSlideNumber);
+        $currentSlide.addClass("down-scroll");
+    }
+
 });

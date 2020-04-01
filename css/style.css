@@ -1834,10 +1834,22 @@ Partner CSS
     border-radius: 3px 0 0 3px;
 }
 
-.left:hover,.right:hover{
+/*.left:hover,.right:hover{
+    background-color: #f90;
+    color: #fff;
+}*/
+
+.button-hover:hover
+{
+   background-color: #ede8e8;
+   color: #fff; 
+}
+
+.button-hover2:hover{
     background-color: #f90;
     color: #fff;
 }
+
 
 
 
