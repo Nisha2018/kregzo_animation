@@ -5,8 +5,9 @@ let home = document.querySelector('.home');
 
 var counter = 1;
 
-prev.classList.add("button-hover2");
+
 next.classList.add("button-hover2");
+prev.classList.add("button-hover");
 
 next.addEventListener("click", () => {
     if(counter === 1) {
@@ -55,8 +56,6 @@ prev.addEventListener("click", () => {
         next.disabled = false;
         next.classList.remove("button-hover");
         next.classList.add("button-hover2");
-
-
     } 
 
 });
