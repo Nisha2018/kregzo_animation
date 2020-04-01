@@ -9,11 +9,19 @@ var totalSlideNumber = $(".background").length;
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt) {
-    var touchobj = evt.changedTouches[0];
-    var dist = parseInt(touchobj.clientX) - startx;
+    if (isFirefox) {
+        //Set delta for Firefox
+        delta = evt.detail * (-120);
+    } else if (isIe) {
+        //Set delta for IE
+        delta = -evt.deltaY;
+    } else {
+        //Set delta for all other browsers
+        delta = evt.wheelDelta;
+    }
 
     if (ticking != true) {
-        if (dist <= -scrollSensitivitySetting) {
+        if (delta <= -scrollSensitivitySetting) {
             //Down scroll
             ticking = true;
             if (currentSlideNumber !== totalSlideNumber - 1) {
@@ -22,7 +30,7 @@ function parallaxScroll(evt) {
             }
             slideDurationTimeout(slideDurationSetting);
         }
-        if (dist >= scrollSensitivitySetting) {
+        if (delta >= scrollSensitivitySetting) {
             //Up scroll
             ticking = true;
             if (currentSlideNumber !== 0) {
@@ -41,8 +49,11 @@ function slideDurationTimeout(slideDuration) {
     }, slideDuration);
 }
 
-// ------------- SLIDE MOTION ------------- //
+// ------------- ADD EVENT LISTENER ------------- //
+var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
+window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
 
+// ------------- SLIDE MOTION ------------- //
 function nextItem() {
     var $previousSlide = $(".background").eq(currentSlideNumber - 1);
     $previousSlide.removeClass("up-scroll").addClass("down-scroll");
@@ -52,19 +63,6 @@ function previousItem() {
     var $currentSlide = $(".background").eq(currentSlideNumber);
     $currentSlide.removeClass("down-scroll").addClass("up-scroll");
 }
-
-var startx = 0;
-var dist = 0;
-window.addEventListener('load', function() {
-    window.addEventListener('touchstart', function(e) {
-        var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
-        startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
-        e.preventDefault();
-    }, false);
-    window.addEventListener('touchmove', _.throttle(parallaxScroll, 60), false);
-}, false);
-
-
 
 // scroll down button
 let mouse = document.querySelector(".mouse-icon");
@@ -76,3 +74,7 @@ mouse.addEventListener("click", () => {
     }
 
 });
+
+
+
+
