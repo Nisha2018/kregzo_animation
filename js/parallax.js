@@ -82,7 +82,7 @@ mouse[i].addEventListener("click", () => {
 
     else{
         var $currentSlide = $(".background").eq(currentSlideNumber);
-        $currentSlide.addClass("down-scroll");
+        $currentSlide.removeClass("down-scroll");
     }
 });
 }
@@ -90,12 +90,12 @@ mouse[i].addEventListener("click", () => {
 
 
 // mobile view
-if(screen.width <=500)
+if(screen.width <=800)
 {
 
 function parallaxScroll(evt) {    
     var touchobj = evt.changedTouches[0]; 
-    var dist = parseInt(touchobj.clientX) - startx; 
+    var dist = parseInt(touchobj.clientY) - startY; 
 
     if (ticking != true) {
         if (dist <= -scrollSensitivitySetting) {
@@ -138,13 +138,13 @@ function previousItem() {
   $currentSlide.removeClass("down-scroll").addClass("up-scroll");
 }
 
+var startY = 0;
 
-var startx = 0;
 var dist = 0;
 window.addEventListener('load', function(){ 
     window.addEventListener('touchstart', function(e){
         var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
-        startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
+        startY = parseInt(touchobj.clientY); // get x position of touch point relative to left edge of browser
         e.preventDefault();
     }, false);
     window.addEventListener('touchmove', _.throttle(parallaxScroll, 60), false);

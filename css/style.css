@@ -1309,12 +1309,12 @@ iframe {
     position: absolute;
     width: 150px;
     height: 150px;
-    top: 2%;
+    top: -2%;
     right: 80%;
 }
 
 .creator-view .spinner-eff {
-    top: 17%;
+    top: 10%;
 }
 
 .spinner-eff .spinner-circle {
@@ -1659,7 +1659,7 @@ Ready To Talk CSS
 }
 
 #home .text-bottom {
-    padding: 10px;
+    padding: 10px 0;
     font-size: 20px;
 }
 
@@ -2125,7 +2125,6 @@ Partner CSS
 .content-right{
     display: grid;
     align-items: center;
-    padding-top: 50px;
     position: relative;
 }
 
@@ -2135,6 +2134,12 @@ Partner CSS
     grid-row: 1;
     grid-column: 1;
     transition: all 0.5s ease-in;
+    padding-top: 100px;
+}
+
+.content-right .text1{
+    padding-top: 45px;
+    padding-left: 20px;
 }
 
 .content-right .text2,.content-right .text3,
