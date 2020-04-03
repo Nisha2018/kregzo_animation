@@ -1630,11 +1630,6 @@ Ready To Talk CSS
     font-size: 16px;
 }
 
-
-#home {
-    overflow: hidden;
-}
-
 #blog .read-more {
     text-align: left;
     padding: 0 16px 20px 16px;
@@ -2206,7 +2201,7 @@ Partner CSS
 
 .page-content {
     position: relative;
-    height: 100vh;
+    height: 130vh;
     overflow: hidden;
 }
 
@@ -2265,7 +2260,7 @@ Partner CSS
 }
 
 .content-wrapper {
-    height: 100vh;
+    height: 130vh;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;

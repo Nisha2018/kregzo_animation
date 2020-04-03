@@ -866,6 +866,10 @@
         width: 100% !important;
     }
 
+    .content-right .text1 {
+        margin-top: -40px;
+    }
+
     .spinner-eff {
         width: 100px;
         height: 100px;
@@ -1404,7 +1408,7 @@
     }
 
     #blog .read-more {
-    text-align: right;
+        text-align: right;
     }
 
     .footer .separator {
