@@ -866,9 +866,9 @@
         width: 100% !important;
     }
 
-    .content-right .text1 {
+    /*.content-right .text1 {
         margin-top: -40px;
-    }
+    }*/
 
     .spinner-eff {
         width: 100px;
@@ -878,7 +878,7 @@
     }
 
     .creator-view .spinner-eff {
-        top: 16%;
+        top: 21%;
         right: 74%;
     }
 
@@ -1381,8 +1381,8 @@
         padding-top: 100px;
     }
 
-    #home .container {
-        padding-top: 140px;
+    #home{
+        padding-top: 100px;
     }
 
     .wave-animation {
@@ -1416,12 +1416,5 @@
         border-right: 1px solid grey;
         border-left: 1px solid grey;
     }
-
-}
-
-@media (min-width: 375px) and (max-width: 990px){
-    #home, #about {
-    padding-top: 200px;
-}
 
 }

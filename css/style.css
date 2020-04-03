@@ -2160,7 +2160,7 @@ Partner CSS
     grid-row: 1;
     grid-column: 1;
     transition: all 0.5s ease-in;
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 .content-right .text1 {
@@ -2199,7 +2199,7 @@ Partner CSS
 
 /*parallax starts*/
 
-.page-content {
+.page-content,#home {
     position: relative;
     height: 100vh;
     overflow: hidden;
