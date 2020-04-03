@@ -1363,6 +1363,10 @@
         padding-top: 65px;
     }
 
+    #home{
+        height: 130vh;
+    }
+
     #about img {
         padding-top: 20px;
     }
