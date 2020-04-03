@@ -2260,7 +2260,7 @@ Partner CSS
 }
 
 .content-wrapper {
-    height: 130vh;
+    height: 100vh;
     display: -webkit-box;
     display: flex;
     -webkit-box-pack: center;
