@@ -279,7 +279,7 @@
 .post .post-image {overflow: hidden; position: relative;}
 .post .post-desc{padding: 30px; background: #ffffff;}
 .post .post-desc h4{margin:0; text-transform: capitalize; font-weight: bold;}
-.post .post-desc h4 a{color: #1c1d3e; display: inline-block;}
+.post .post-desc h4 a{color: #1c1d3e; display: inline-block;font-size: 20px;}
 .post .post-desc h4 a:hover{color: #2575fc}
 .post .post-desc p{margin: 15px 0; font-size: 14px; color: #828893;}
 .post-meta ul li{font-size: 14px; font-weight: normal; display: inline-block; vertical-align: middle; margin: 0 10px 0 0; list-style-type: none; position: relative;}

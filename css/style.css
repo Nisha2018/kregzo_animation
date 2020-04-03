@@ -1,4 +1,3 @@
-
 /* ------------------------
     Table of Contents
 
@@ -35,7 +34,7 @@
 @import url('https://fonts.googleapis.com/css?family=Charm:400,700');
 
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -260,7 +259,7 @@ section.about {
 }
 
 section#blog {
-    padding: 40px 0 0px;
+    padding: 100px 0px;
 }
 
 .font-w-3 {
@@ -1147,8 +1146,8 @@ iframe {
     height: 5em;
     max-height: 100vh;
     margin: 0;
-    position: fixed;
-    bottom: 0;
+    position: absolute;
+    bottom: 23%;
     left: 0;
 }
 
@@ -1632,12 +1631,31 @@ Ready To Talk CSS
 }
 
 
-#home{
+#home {
     overflow: hidden;
 }
 
-#blog{
-    padding-top: 300px;
+#blog .read-more {
+    text-align: left;
+    padding: 0 16px 20px 16px;
+    font-size: 18px;
+}
+
+#blog .read-more a {
+    color: #036;
+    font-weight: 500;
+}
+
+#blog .read-more a:hover,.footer .footer-social ul li a:hover{
+    color: #f90;
+}
+
+#blog .section-title {
+    margin-bottom: 30px;
+}
+
+.footer{
+    font-size: 14px;
 }
 
 .btn-primary {
@@ -1647,7 +1665,7 @@ Ready To Talk CSS
     /*  border-radius: 30px;*/
 }
 
-.btn.btn-primary:hover{
+.btn.btn-primary:hover {
     background: #036;
 }
 
@@ -1813,13 +1831,14 @@ Partner CSS
     padding-top: 76px;
 }
 
-.section-title h2.about-heading{
+.section-title h2.about-heading {
     font-size: 25px;
     letter-spacing: 1px;
 }
 
 /*controls*/
- .left,.right{
+.left,
+.right {
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -1846,13 +1865,12 @@ Partner CSS
     color: #fff;
 }*/
 
-.button-hover:hover
-{
-   background-color: #ede8e8;
-   color: #fff; 
+.button-hover:hover {
+    background-color: #ede8e8;
+    color: #fff;
 }
 
-.button-hover2:hover{
+.button-hover2:hover {
     background-color: #f90;
     color: #fff;
 }
@@ -1861,24 +1879,24 @@ Partner CSS
 
 
 /* Images */
-.img-container{
+.img-container {
     display: grid;
     justify-content: start;
 }
 
 
-.img-container img{
+.img-container img {
     grid-column: 2;
     grid-row: 1;
 }
 
-.bulb{
+.bulb {
     position: relative;
     left: 31%;
     bottom: -3%;
 }
 
-.filament{
+.filament {
     position: relative;
     left: 33%;
     bottom: -10%;
@@ -1886,7 +1904,7 @@ Partner CSS
     transition: all 1s linear;
 }
 
-.area{
+.area {
     width: 100%;
 }
 
@@ -1895,19 +1913,19 @@ Partner CSS
     bottom: -31%;
 }
 
-.base{
+.base {
     position: relative;
     left: 30%;
     top: 70%;
     transition: all 1s linear;
 }
 
-.creator-view .base{
+.creator-view .base {
     left: 39.5%;
     top: 70%;
 }
 
-.wires{
+.wires {
     position: absolute;
     top: 72%;
     width: 100%;
@@ -1917,35 +1935,38 @@ Partner CSS
     transition: height 2s linear;
 }
 
-.mentor-view .wires{
+.mentor-view .wires {
     overflow: auto;
     height: 1000px;
     transition: height 10s linear;
 }
 
-.wire1,.wire2,.wire3,.wire4{
+.wire1,
+.wire2,
+.wire3,
+.wire4 {
     top: 24px;
     left: 120px;
     position: absolute;
     z-index: 1;
 }
 
-.wire2{
+.wire2 {
     left: 106px;
     top: 27px;
 }
 
-.wire3{
+.wire3 {
     left: 35%;
     top: -17px;
 }
 
-.wire4{
+.wire4 {
     left: 33%;
     top: 0%;
 }
 
-.creator1{
+.creator1 {
     position: relative;
     left: 24%;
     top: 39%;
@@ -1956,11 +1977,11 @@ Partner CSS
     opacity: 0;
 }
 
-.mentor-view .creator1{
-     transition: all 0.2s linear;
+.mentor-view .creator1 {
+    transition: all 0.2s linear;
 }
 
-.creator2{
+.creator2 {
     position: relative;
     left: 20%;
     top: 40%;
@@ -1968,13 +1989,14 @@ Partner CSS
     opacity: 0;
 }
 
-.creator-view .creator1,.mentor-view .creator2 {
+.creator-view .creator1,
+.mentor-view .creator2 {
     transform: translateX(0) scale(1) rotate(0deg);
     opacity: 1;
     visibility: visible;
 }
 
-.gear1{
+.gear1 {
     position: relative;
     left: 20%;
     top: 10%;
@@ -1983,18 +2005,23 @@ Partner CSS
     opacity: 0.2;
 }
 
-.creator-view .gear1, .creator-view .gear2,.creator-view .gear3,.creator-view .gear4,
-.creator-view .box, .creator-view .panel{
+.creator-view .gear1,
+.creator-view .gear2,
+.creator-view .gear3,
+.creator-view .gear4,
+.creator-view .box,
+.creator-view .panel {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
 }
 
-.mentor-view .creator1{
+.mentor-view .creator1 {
     opacity: 0;
 }
 
-.investor,.cheque{
+.investor,
+.cheque {
     position: relative;
     left: 42%;
     top: 47%;
@@ -2012,32 +2039,33 @@ Partner CSS
     z-index: 8;
 }
 
-.investor-view .investor,.investor-view .cheque{
+.investor-view .investor,
+.investor-view .cheque {
     transform: translateX(0px) rotate(0deg);
     opacity: 1;
     visibility: visible;
 }
 
-.creator3{
+.creator3 {
     position: relative;
     top: 38%;
     left: 24%;
     z-index: -1;
     visibility: hidden;
-    opacity: 0.2; 
-    transition: all 0.5s linear;   
+    opacity: 0.2;
+    transition: all 0.5s linear;
 }
 
-.investor-view .creator2{
+.investor-view .creator2 {
     visibility: hidden;
 }
 
-.investor-view .creator3{
+.investor-view .creator3 {
     visibility: visible;
     opacity: 1;
 }
 
-.gear2{
+.gear2 {
     position: relative;
     left: 18%;
     top: 34%;
@@ -2047,7 +2075,7 @@ Partner CSS
     z-index: -1;
 }
 
-.gear3{
+.gear3 {
     left: 56%;
     top: 40%;
     position: relative;
@@ -2056,7 +2084,7 @@ Partner CSS
     transition: all 2s ease-in-out;
 }
 
-.gear4{
+.gear4 {
     position: relative;
     left: 62%;
     top: 22%;
@@ -2065,7 +2093,7 @@ Partner CSS
     transition: all 2s ease-in-out;
 }
 
-.box{
+.box {
     position: relative;
     top: 90%;
     left: 5%;
@@ -2075,7 +2103,7 @@ Partner CSS
     z-index: 1;
 }
 
-.panel{
+.panel {
     position: relative;
     left: 63%;
     top: 38%;
@@ -2084,7 +2112,7 @@ Partner CSS
     opacity: 0;
 }
 
-.light-bulb{
+.light-bulb {
     position: relative;
     left: 29%;
     bottom: 12%;
@@ -2093,12 +2121,12 @@ Partner CSS
     transition: all 2.5s linear;
 }
 
-.mentor-view .light-bulb{
+.mentor-view .light-bulb {
     visibility: visible;
     transform: scale(1);
 }
 
-.mentor2{
+.mentor2 {
     position: relative;
     left: 73%;
     top: 37%;
@@ -2107,7 +2135,7 @@ Partner CSS
     opacity: 0;
 }
 
-.mentor1{
+.mentor1 {
     position: relative;
     top: 60%;
     right: 5%;
@@ -2117,19 +2145,22 @@ Partner CSS
     z-index: 3;
 }
 
-.mentor-view .mentor1,.mentor-view .mentor2 {
+.mentor-view .mentor1,
+.mentor-view .mentor2 {
     transform: translateX(0) scale(1) rotate(0deg);
     opacity: 1;
 }
 
-.content-right{
+.content-right {
     display: grid;
     align-items: center;
     position: relative;
 }
 
-.content-right .text1,.content-right .text2,.content-right .text3,
-.content-right .text4{
+.content-right .text1,
+.content-right .text2,
+.content-right .text3,
+.content-right .text4 {
     display: grid;
     grid-row: 1;
     grid-column: 1;
@@ -2137,53 +2168,61 @@ Partner CSS
     padding-top: 100px;
 }
 
-.content-right .text1{
+.content-right .text1 {
     padding-top: 0px;
     padding-left: 20px;
 }
 
-.content-right .text2,.content-right .text3,
-.content-right .text4{
+.content-right .text2,
+.content-right .text3,
+.content-right .text4 {
     transform: translateY(100px);
 }
 
-.creator-view .text1,.creator-view.mentor-view .text2,.mentor-view.investor-view .text3{
+.creator-view .text1,
+.creator-view.mentor-view .text2,
+.mentor-view.investor-view .text3 {
     visibility: hidden;
     opacity: 0;
 }
 
-.creator-view .text2,.mentor-view .text3,.mentor-view.investor-view .text4{
+.creator-view .text2,
+.mentor-view .text3,
+.mentor-view.investor-view .text4 {
     visibility: visible;
     opacity: 1;
     transform: translateY(0px);
 }
 
 
-.hide{
+.hide {
     visibility: hidden;
     opacity: 0;
-    
+
 }
 
 
 /*parallax starts*/
 
+.page-content {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
 #main-container {
     overflow: hidden;
     position: relative;
-    height: 100vh;
+    height: 130vh;
 }
 
 .background {
-    /*background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;*/
     overflow: hidden;
     will-change: transform;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     height: 130vh;
-    position: fixed;
+    position: absolute;
     width: 100%;
     -webkit-transform: translateY(100vh);
     transform: translateY(100vh);
@@ -2285,14 +2324,3 @@ Partner CSS
 
 
 /*parallax ends*/
-
-
-
-
-
-
-
-
-
-
-
