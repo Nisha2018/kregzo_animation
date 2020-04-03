@@ -2201,12 +2201,11 @@ Partner CSS
 
 .page-content {
     position: relative;
-    height: 130vh;
+    height: 100vh;
     overflow: hidden;
 }
 
 #main-container {
-    overflow: hidden;
     position: relative;
     height: 130vh;
 }
