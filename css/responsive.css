@@ -866,14 +866,14 @@
         width: 100% !important;
     }
 
-    /*.content-right .text1 {
-        margin-top: -40px;
-    }*/
+    .content-right .text1 {
+        margin-top: -30px;
+    }
 
     .spinner-eff {
         width: 100px;
         height: 100px;
-        top: -2%;
+        top: -3%;
         right: 74%;
     }
 
