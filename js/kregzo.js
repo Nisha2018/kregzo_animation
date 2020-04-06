@@ -23,14 +23,20 @@ next.addEventListener("click", () => {
     } else if(counter === 3) {
         home.classList.add("investor-view");
         counter++;
-        next.disabled = true;
-        next.classList.remove("button-hover2");
-        next.classList.add("button-hover");
+        // next.disabled = true;
+        // next.classList.remove("button-hover2");
+        // next.classList.add("button-hover");
         
         prev.disabled = false;
         prev.classList.add("button-hover2");
  
-    } 
+    } else if(counter===4){
+        home.classList.remove("investor-view","mentor-view","creator-view");
+        counter = 1;
+        prev.disabled = true;
+        prev.classList.remove("button-hover2");
+        prev.classList.add("button-hover");
+    }
 
 }); 
 
@@ -40,9 +46,9 @@ prev.addEventListener("click", () => {
     if (counter === 4) {
         home.classList.remove("investor-view");
         counter--;
-        next.disabled = false;
-        next.classList.remove("button-hover");
-        next.classList.add("button-hover2");
+        // next.disabled = false;
+        // next.classList.remove("button-hover");
+        // next.classList.add("button-hover2");
     } else if (counter === 3) {
         home.classList.remove("mentor-view");
         counter--;
@@ -53,9 +59,9 @@ prev.addEventListener("click", () => {
         prev.classList.remove("button-hover2");
         prev.classList.add("button-hover");
         
-        next.disabled = false;
-        next.classList.remove("button-hover");
-        next.classList.add("button-hover2");
+        // next.disabled = false;
+        // next.classList.remove("button-hover");
+        // next.classList.add("button-hover2");
     } 
 
 });
