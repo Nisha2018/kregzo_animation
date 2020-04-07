@@ -1,7 +1,10 @@
 let next = document.querySelector('.right');
 let prev = document.querySelector('.left');
 let home = document.querySelector('.home');
-
+let imgContainer = document.querySelector(".img-container");
+let content = document.querySelector(".content-right");
+let temp = document.querySelector(".temp");
+let mouse = document.querySelector(".mouse");
 
 var counter = 1;
 
@@ -65,3 +68,40 @@ prev.addEventListener("click", () => {
     } 
 
 });
+
+
+window.addEventListener('scroll', () => {
+
+    console.log(pageYOffset);
+
+    if(window.pageYOffset <= 20){
+        imgContainer.style.position = "relative";
+        // content.style.position = "relative";
+    }
+    else{
+        imgContainer.style.position = "fixed";
+        // content.style.position = "fixed";
+    }
+
+    if(window.pageYOffset >= 150){
+        home.classList.add("creator-view");
+        temp.style.display = "block";
+
+        content.style.top = 246+"px";
+        mouse.style.display = "none";
+    } else {
+        home.classList.remove("creator-view");
+        content.style.top = 0+"px";
+        temp.style.display = "none";
+         mouse.style.display = "block";
+    }
+
+    if(window.pageYOffset >= 648) {
+        imgContainer.style.position = "relative";
+        // content.style.position = "relative";
+        // temp.style.display = "none";
+    }
+    
+    
+});
+

@@ -952,7 +952,7 @@
 
     .wire3 {
         left: 46%;
-        top: -33px;
+        top: -18px;
     }
 
     .wire4 {
@@ -1358,13 +1358,8 @@
         justify-content: center;
     }
 
-    #home,
-    #about {
-        padding-top: 65px;
-    }
-
-    #home{
-        height: 130vh;
+    #home {
+        padding-top: 100px;
     }
 
     #about img {
@@ -1373,7 +1368,7 @@
 
     .left,
     .right {
-        top: 20%;
+        top: 25%;
     }
 
 }
