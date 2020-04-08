@@ -870,6 +870,10 @@
         height: 350px;
     }
 
+    .img-container {
+        top: inherit;
+    }
+
     .content-right .text1 {
         margin-top: -30px;
     }
@@ -936,7 +940,7 @@
 
     .box {
         width: 115px;
-        top: 102%;
+        /*top: 102%;*/
     }
 
     .wire1,

@@ -1961,12 +1961,12 @@ Partner CSS
 }
 
 .wire3 {
-    left: 37%;
-    top: 9px;
+    left: 47%;
+    top: 8px;
 }
 
 .wire4 {
-    left: 35%;
+    left: 45%;
     top: 26px;
 }
 
@@ -2000,24 +2000,14 @@ Partner CSS
     visibility: visible;
 }
 
-.gear1 {
-    position: relative;
-    /*left: 20%;
-    top: 10%;*/
-    transform: translateY(-700px);
-    transition: all 2s ease-in-out;
-    opacity: 0.3;
-}
-
 .creator-view .gear1,
 .creator-view .gear2,
 .creator-view .gear3,
 .creator-view .gear4,
-.creator-view .box,
+/*.creator-view .box,*/
 .creator-view .panel {
     transform: translateY(0);
     opacity: 1;
-    visibility: visible;
 }
 
 .mentor-view .creator1 {
@@ -2069,10 +2059,19 @@ Partner CSS
     opacity: 1;
 }
 
+.gear1 {
+    position: relative;
+    /*left: 20%;
+    top: 10%;*/
+    transform: translateY(-700px);
+    transition: all 2s ease-in-out;
+    opacity: 0.3;
+}
+
 .gear2 {
     position: relative;
-    left: 18%;
-    top: 34%;
+    /*left: 18%;
+    top: 34%;*/
     transform: translateY(-400px);
     opacity: 0.3;
     transition: all 2s ease-in-out;
@@ -2080,8 +2079,8 @@ Partner CSS
 }
 
 .gear3 {
-    left: 56%;
-    top: 40%;
+    /*left: 56%;
+    top: 40%;*/
     position: relative;
     transform: translateY(-600px);
     opacity: 0.3;
@@ -2090,8 +2089,8 @@ Partner CSS
 
 .gear4 {
     position: relative;
-    left: 62%;
-    top: 22%;
+    /*left: 62%;
+    top: 22%;*/
     transform: translateY(-400px);
     opacity: 0.3;
     transition: all 2s ease-in-out;
@@ -2099,11 +2098,11 @@ Partner CSS
 
 .box {
     position: relative;
-    top: 90%;
+    /*top: 90%;*/
     left: 5%;
-    transform: translateY(200px);
-    transition: all 2s ease-in;
-    opacity: 0;
+    transform: translateY(500px);
+   /* transition: all 2s ease-in;*/
+    /*opacity: 0;*/
     z-index: 1;
 }
 
