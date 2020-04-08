@@ -76,6 +76,7 @@ window.addEventListener('scroll', () => {
     gear3.style.top = value + 500 + 'px';
     gear4.style.top = value + 500 + 'px';
     box.style.bottom = value * 1 + 200 + 'px';
+    content.style.top = value * 1 + 'px';
 
     if (window.pageYOffset == 0) {
         box.style.visibility = "hidden";
@@ -116,13 +117,13 @@ window.addEventListener('scroll', () => {
 
         home.classList.add("creator-view");
         temp.classList.add("show");
-        content.style.top = 246 + "px";
+        content.style.top = 250 + "px";
         mouse.style.display = "none";
         prev.style.display = "block";
         next.style.display = "block";
     } else {
         home.classList.remove("creator-view");
-        content.style.top = 0 + "px";
+        // content.style.top = 0 + "px";
         temp.classList.remove("show");
         mouse.style.display = "block";
         prev.style.display = "none";

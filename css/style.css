@@ -1874,7 +1874,7 @@ Partner CSS
 
 .content-right{
     position: relative;
-    top: 0;
+    /*top: 0;*/
     transition: all 0.5s linear;
 }
 
@@ -2064,7 +2064,7 @@ Partner CSS
     /*left: 20%;
     top: 10%;*/
     transform: translateY(-700px);
-    transition: all 2s ease-in-out;
+    /*transition: all 2s ease-in-out;*/
     opacity: 0.3;
 }
 
@@ -2074,7 +2074,7 @@ Partner CSS
     top: 34%;*/
     transform: translateY(-400px);
     opacity: 0.3;
-    transition: all 2s ease-in-out;
+    /*transition: all 2s ease-in-out;*/
     z-index: -1;
 }
 
@@ -2084,7 +2084,7 @@ Partner CSS
     position: relative;
     transform: translateY(-600px);
     opacity: 0.3;
-    transition: all 2s ease-in-out;
+    /*transition: all 2s ease-in-out;*/
 }
 
 .gear4 {
@@ -2093,7 +2093,7 @@ Partner CSS
     top: 22%;*/
     transform: translateY(-400px);
     opacity: 0.3;
-    transition: all 2s ease-in-out;
+    /*transition: all 2s ease-in-out;*/
 }
 
 .box {
@@ -2167,7 +2167,7 @@ Partner CSS
     display: grid;
     grid-row: 1;
     grid-column: 1;
-    transition: all 0.5s ease-in;
+    /*transition: all 0.5s ease-in;*/
     padding-top: 120px;
 }
 
