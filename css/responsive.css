@@ -866,6 +866,10 @@
         width: 100% !important;
     }
 
+    .temp {
+        height: 350px;
+    }
+
     .content-right .text1 {
         margin-top: -30px;
     }
@@ -1380,7 +1384,7 @@
         padding-top: 100px;
     }
 
-    #home{
+    #home {
         padding-top: 100px;
     }
 

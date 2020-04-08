@@ -1836,7 +1836,7 @@ Partner CSS
 .left,
 .right {
     cursor: pointer;
-    position: absolute;
+    position: fixed;
     top: 50%;
     width: auto;
     padding: 16px;
@@ -1849,6 +1849,7 @@ Partner CSS
     background: transparent;
     border: none;
     z-index: 20;
+    display: none;
 }
 
 .right {
@@ -1900,7 +1901,7 @@ Partner CSS
 
 .filament {
     position: relative;
-    left: 33%;
+    /*left: 33%;*/
     bottom: -10%;
     z-index: 2;
     transition: all 1s linear;
@@ -1917,7 +1918,7 @@ Partner CSS
 
 .base {
     position: relative;
-    left: 30%;
+    /*left: 30%;*/
     top: 70%;
     z-index: 7;
     transition: all 1s linear;
@@ -2001,11 +2002,11 @@ Partner CSS
 
 .gear1 {
     position: relative;
-    left: 20%;
-    top: 10%;
-    transform: translateY(-800px);
+    /*left: 20%;
+    top: 10%;*/
+    transform: translateY(-700px);
     transition: all 2s ease-in-out;
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .creator-view .gear1,
@@ -2216,8 +2217,12 @@ Partner CSS
 
 .temp{
     width: 100%;
-    height: 100vh;
+    height: 200px;
     display: none;
+}
+
+.show{
+    display: block;
 }
 
 

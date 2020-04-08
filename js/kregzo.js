@@ -5,6 +5,15 @@ let imgContainer = document.querySelector(".img-container");
 let content = document.querySelector(".content-right");
 let temp = document.querySelector(".temp");
 let mouse = document.querySelector(".mouse");
+let filament = document.querySelector(".filament");
+let base = document.querySelector(".base");
+let creator1 = document.querySelector(".creator1");
+let gear1 = document.querySelector(".gear1");
+let gear2 = document.querySelector(".gear2");
+let gear3 = document.querySelector(".gear3");
+let gear4 =document.querySelector(".gear4");
+let box =document.querySelector(".box");
+let panel =document.querySelector(".panel");
 
 var counter = 1;
 
@@ -73,10 +82,15 @@ prev.addEventListener("click", () => {
 window.addEventListener('scroll', () => {
 
     console.log(pageYOffset);
+    var value = window.scrollY;
+
+    filament.style.left = value * 1 + 'px';
+    base.style.left = value * 1 + 'px';
+    gear1.style.top = value + 500  + 'px';
 
     if(window.pageYOffset <= 20){
         imgContainer.style.position = "relative";
-        // content.style.position = "relative";
+        content.style.position = "relative";
     }
     else{
         imgContainer.style.position = "fixed";
@@ -84,22 +98,30 @@ window.addEventListener('scroll', () => {
     }
 
     if(window.pageYOffset >= 150){
-        home.classList.add("creator-view");
-        temp.style.display = "block";
+        filament.style.left = 36 + '%';
+        base.style.left = 39.5 + '%';
+        gear1.setAttribute("style","top:10%;left:20%;");
 
+        home.classList.add("creator-view");
+        temp.classList.add("show");
         content.style.top = 246+"px";
         mouse.style.display = "none";
+        prev.style.display = "block";
+        next.style.display = "block";
     } else {
         home.classList.remove("creator-view");
         content.style.top = 0+"px";
-        temp.style.display = "none";
-         mouse.style.display = "block";
+        temp.classList.remove("show");
+        mouse.style.display = "block";
+        prev.style.display = "none";
+        next.style.display = "none";
     }
 
-    if(window.pageYOffset >= 648) {
+    if(window.pageYOffset >= 400) {
         imgContainer.style.position = "relative";
-        // content.style.position = "relative";
-        // temp.style.display = "none";
+        content.style.position = "relative";
+        prev.style.display = "none";
+        next.style.display = "none";
     }
     
     
