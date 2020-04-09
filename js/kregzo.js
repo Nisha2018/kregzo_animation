@@ -103,8 +103,15 @@ window.addEventListener('scroll', () => {
      }
 
     if (window.pageYOffset >= 150) {
-        filament.style.left = 36 + '%';
-        base.style.left = 39.5 + '%';
+        
+        if(screen.width <= 600){
+            filament.style.left = 38 + '%';
+            base.style.left = 40 + '%';
+        }else{
+            filament.style.left = 36 + '%';
+            base.style.left = 39.5 + '%';
+        }
+
         gear1.setAttribute("style", "top:10%;left:20%;");
         gear2.setAttribute("style", "top:34%;left:18%;");
         gear3.setAttribute("style", "top:40%;left:56%;");
