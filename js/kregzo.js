@@ -17,7 +17,6 @@ let panel = document.querySelector(".panel");
 
 var counter = 1;
 
-
 next.classList.add("button-hover2");
 prev.classList.add("button-hover");
 
@@ -44,15 +43,11 @@ next.addEventListener("click", () => {
 
 });
 
-
 prev.addEventListener("click", () => {
 
     if (counter === 3) {
         home.classList.remove("investor-view");
         counter--;
-        // next.disabled = false;
-        // next.classList.remove("button-hover");
-        // next.classList.add("button-hover2");
     } else if (counter === 2) {
         home.classList.remove("mentor-view");
         counter--;
@@ -65,10 +60,8 @@ prev.addEventListener("click", () => {
 
 
 window.addEventListener('scroll', () => {
-
     console.log(pageYOffset);
     var value = window.scrollY;
-
     filament.style.left = value * 1 + 'px';
     base.style.left = value * 1 + 'px';
     gear1.style.top = value + 500 + 'px';
@@ -77,6 +70,7 @@ window.addEventListener('scroll', () => {
     gear4.style.top = value + 500 + 'px';
     box.style.bottom = value * 1 + 200 + 'px';
     content.style.top = value * 1 + 'px';
+    creator1.style.left = value * 1 + 100 + 'px';
 
     if (window.pageYOffset == 0) {
         box.style.visibility = "hidden";
@@ -84,6 +78,7 @@ window.addEventListener('scroll', () => {
         gear2.style.visibility = "hidden";
         gear3.style.visibility = "hidden";
         gear4.style.visibility = "hidden";
+        creator1.style.visibility = "hidden";
         box.style.display="block";
     } else {
         box.style.visibility = "visible";
@@ -91,6 +86,7 @@ window.addEventListener('scroll', () => {
         gear2.style.visibility = "visible";
         gear3.style.visibility = "visible";
         gear4.style.visibility = "visible";
+        creator1.style.visibility = "visible";
     }
 
     if (window.pageYOffset <= 20) {
@@ -114,7 +110,7 @@ window.addEventListener('scroll', () => {
         gear3.setAttribute("style", "top:40%;left:56%;");
         gear4.setAttribute("style", "top:22%;left:62%;");
         box.style.bottom = 140 + '%';
-
+        creator1.style.left = 24 + '%';
         home.classList.add("creator-view");
         temp.classList.add("show");
         content.style.top = 250 + "px";
@@ -138,13 +134,11 @@ window.addEventListener('scroll', () => {
         box.style.display="none";
     }
 
-
 });
 
 
 // scroll down
-
 mouse.addEventListener("click",()=>{
     // window.scrollBy(0,250);
     window.scrollTo({ top: 250, behavior: 'smooth' })
-})
+});

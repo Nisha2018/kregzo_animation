@@ -1972,13 +1972,13 @@ Partner CSS
 
 .creator1 {
     position: relative;
-    left: 24%;
+    /*left: 24%;*/
     top: 39%;
     z-index: -1;
-    transform: translateX(-500px) scale(0) rotate(-65deg);
+    transform: translateX(-250px);
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 2s ease-in;
-    opacity: 0;
+    opacity: 0.7;
 }
 
 .mentor-view .creator1 {
