@@ -3,7 +3,6 @@ let prev = document.querySelector('.left');
 let home = document.querySelector('.home');
 let imgContainer = document.querySelector(".img-container");
 let content = document.querySelector(".content-right");
-let temp = document.querySelector(".temp");
 let mouse = document.querySelector(".mouse");
 let filament = document.querySelector(".filament");
 let base = document.querySelector(".base");
@@ -62,90 +61,91 @@ prev.addEventListener("click", () => {
 window.addEventListener('scroll', () => {
     console.log(pageYOffset);
     var value = window.scrollY;
-    filament.style.left = value * 1 + 'px';
-    base.style.left = value * 1 + 'px';
-    gear1.style.top = value + 500 + 'px';
-    gear2.style.top = value + 200 + 'px';
-    gear3.style.top = value + 500 + 'px';
-    gear4.style.top = value + 500 + 'px';
-    box.style.bottom = value * 1 + 200 + 'px';
-    content.style.top = value * 1 + 'px';
-    creator1.style.left = value * 1 + 100 + 'px';
+    if (window.pageYOffset <= 450) {
+        gear1.style.top = (value * 0.3) + 10 + '%';
+        gear2.style.top = value * 0.38 + '%';
+        gear2.style.left = value * 0.2 + 'px';
+        gear3.style.top = value * 0.38 + '%';
+        gear4.style.top = value * 0.35 + '%';
+        box.style.bottom = value * 0.32 + '%';
+        panel.style.bottom = value * 0.432 + '%';
+        filament.style.left = value * 0.34 + 'px';
+        filament.style.top = value * 0.15 + 'px';
+        base.style.left = value * 0.38 + 'px';
+        creator1.style.left = value * 0.18 + '%';
 
-    if (window.pageYOffset == 0) {
-        box.style.visibility = "hidden";
-        gear1.style.visibility = "hidden";
-        gear2.style.visibility = "hidden";
-        gear3.style.visibility = "hidden";
-        gear4.style.visibility = "hidden";
-        creator1.style.visibility = "hidden";
-        box.style.display="block";
-    } else {
-        box.style.visibility = "visible";
-        gear1.style.visibility = "visible";
-        gear2.style.visibility = "visible";
-        gear3.style.visibility = "visible";
-        gear4.style.visibility = "visible";
-        creator1.style.visibility = "visible";
+        if (screen.width <= 600) {
+            filament.style.left = value * 0.29 + 'px';
+            base.style.left = value * 0.31 + 'px';
+            creator1.style.left = value * 0.2 + '%';
+            panel.style.bottom = value * 0.85 + '%';
+            box.style.bottom = value * 0.65 + '%';
+            gear1.style.top = (value * 0.3) + 18 + '%';
+            gear2.style.left = value * 0.14 + 'px';
+        }
     }
 
-    if (window.pageYOffset <= 20) {
-        imgContainer.style.position = "relative";
-        content.style.position = "relative";
-    } else {
-        imgContainer.style.position = "fixed";
-        // content.style.position = "fixed";
-    }
-
-     if (window.pageYOffset <= 122){
+    if (window.pageYOffset <= 122) {
         home.classList.remove("mentor-view");
         home.classList.remove("investor-view");
-     }
+    }
 
-    if (window.pageYOffset >= 150) {
-        
-        if(screen.width <= 600){
-            filament.style.left = 38 + '%';
-            base.style.left = 40 + '%';
-        }else{
-            filament.style.left = 36 + '%';
-            base.style.left = 39.5 + '%';
-        }
+    if (window.pageYOffset >= 10 && screen.width <= 800) {
+        imgContainer.classList.add("blur");
+    } else {
+        imgContainer.classList.remove("blur");
+    }
 
-        gear1.setAttribute("style", "top:10%;left:20%;");
-        gear2.setAttribute("style", "top:34%;left:18%;");
-        gear3.setAttribute("style", "top:40%;left:56%;");
-        gear4.setAttribute("style", "top:22%;left:62%;");
-        box.style.bottom = 140 + '%';
-        creator1.style.left = 24 + '%';
-        home.classList.add("creator-view");
-        temp.classList.add("show");
-        content.style.top = 250 + "px";
+    if (window.pageYOffset <= 20 && screen.width <= 800) {
+        imgContainer.style.position = "relative";
+    } else {
+        imgContainer.style.position = "fixed";
+    }
+
+    if (window.pageYOffset >= 300) {
         mouse.style.display = "none";
         prev.style.display = "block";
         next.style.display = "block";
     } else {
-        home.classList.remove("creator-view");
-        // content.style.top = 0 + "px";
-        temp.classList.remove("show");
         mouse.style.display = "block";
+        if (screen.width <= 800) {
+            mouse.style.display = "none";
+        }
         prev.style.display = "none";
         next.style.display = "none";
     }
 
-    if (window.pageYOffset >= 400) {
-        imgContainer.style.position = "relative";
-        content.style.position = "relative";
+    if (window.pageYOffset >= 450) {
+        gear1.classList.add("spin");
+        gear2.classList.add("spin");
+        gear3.classList.add("spin");
+        gear4.classList.add("spin");
+    } else {
+        gear1.classList.remove("spin");
+        gear2.classList.remove("spin");
+        gear3.classList.remove("spin");
+        gear4.classList.remove("spin");
+    }
+
+    if (window.pageYOffset >= 600) {
+        imgContainer.style.display = "none";
         prev.style.display = "none";
         next.style.display = "none";
-        box.style.display="none";
+    }else{
+        imgContainer.style.display = "grid";
     }
 
 });
 
 
 // scroll down
-mouse.addEventListener("click",()=>{
-    // window.scrollBy(0,250);
-    window.scrollTo({ top: 250, behavior: 'smooth' })
+mouse.addEventListener("click", () => {
+    window.scrollTo({ top: 450, behavior: 'smooth' })
 });
+
+
+if (screen.width <= 800) {
+    mouse.style.display = "none";
+} else {
+    mouse.style.display = "block";
+}
