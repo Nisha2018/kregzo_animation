@@ -85,10 +85,10 @@ window.addEventListener('scroll', () => {
     //     }
     // }
 
-//     if (window.pageYOffset <= 122) {
-//         home.classList.remove("mentor-view");
-//         home.classList.remove("investor-view");
-//     }
+    if (window.pageYOffset <= 122) {
+        home.classList.remove("mentor-view");
+        home.classList.remove("investor-view");
+    }
 
     if (window.pageYOffset >= 10 && screen.width <= 800) {
         imgContainer.classList.add("blur");
