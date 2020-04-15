@@ -1286,8 +1286,8 @@
      right: 80%;
  }
 
- .spinner-eff.clone{
-    top: 12%;
+ .spinner-eff.clone {
+     top: 12%;
  }
 
  .creator-view .spinner-eff {
@@ -1679,7 +1679,8 @@ Ready To Talk CSS
      display: block;
  }
 
- .mouse-wheel,.mouse-left {
+ .mouse-wheel,
+ .mouse-left {
      /*height: 30px;*/
      margin: 2px auto 0;
      display: block;
@@ -1696,8 +1697,8 @@ Ready To Talk CSS
      font-size: 20px;
  }
 
- .mouse-left{
-    animation: 1.6s ease infinite wheel-left;
+ .mouse-left {
+     animation: 1.6s ease infinite wheel-left;
  }
 
  @keyframes wheel-up-down {
@@ -1855,8 +1856,8 @@ Partner CSS
      border-radius: 3px 0 0 3px;
  }
 
- .right:hover.mouse-left{
-    animation: none;
+ .right:hover.mouse-left {
+     animation: none;
  }
 
  .button-hover:hover {
@@ -1884,8 +1885,8 @@ Partner CSS
      pointer-events: none;
  }
 
- .blur{
-    opacity: 0.4;
+ .blur {
+     opacity: 0.4;
  }
 
  .bulb {
@@ -1896,6 +1897,8 @@ Partner CSS
 
  .filament {
      z-index: 2;
+     left: 36%;
+    bottom: -31%;
  }
 
  .area {
@@ -2062,51 +2065,65 @@ Partner CSS
      0% {
          transform: translateY(-300px) rotate(0deg);
      }
+
      100% {
          -webkit-transform: translateY(-300px) rotate(360deg);
          transform: translateY(-300px) rotate(360deg);
      }
  }
 
- .spin{
-    animation: spin 4s linear infinite;
-    -webkit-animation: spin 4s linear infinite;
+ .spin {
+     animation: spin 4s linear infinite;
+     -webkit-animation: spin 4s linear infinite;
      -moz-animation: spin 4s linear infinite;
  }
 
- 
+
 
  .gear1 {
      left: 20%;
+     top: 10%;
  }
 
- .gear1,
+ .gear2 {
+     top: 34%;
+     left: 18%;
+ }
+
+ /*.gear1,
  .gear2,
  .gear3,
  .gear4 {
      transform: translateY(-300px);
  }
-
+*/
  .gear3 {
      left: 56%;
+     top: 40%;
  }
 
  .gear4 {
+     top: 22%;
      left: 62%;
  }
 
  .box {
-     transform: translateY(500px);
+     /*transform: translateY(500px);*/
+     top: 90%;
      left: 5%;
      z-index: 1;
  }
 
  .panel {
-     transform: translate(274px, 500px);
+     /*transform: translate(274px, 500px);*/
+     left: 63%;
+     top: 38%;
  }
 
  .creator1 {
-     transform: translate(-250px, 85px);
+     /*transform: translate(-250px, 85px);*/
+     left: 22%;
+     top: 39%;
      z-index: 1;
  }
 
@@ -2170,15 +2187,17 @@ Partner CSS
      padding-left: 20px;
  }
 
- .content-right .text1,.content-right .text2,.content-right .text3,
- .content-right .text4{
-    position: relative;
+ .content-right .text1,
+ .content-right .text2,
+ .content-right .text3,
+ .content-right .text4 {
+     position: relative;
  }
 
-.content-right .text3,
-.content-right .text4 {
-    transform: translateY(100px);
-}
+ .content-right .text3,
+ .content-right .text4 {
+     transform: translateY(100px);
+ }
 
  .mentor-view .text2,
  .mentor-view.investor-view .text3 {
@@ -2190,7 +2209,7 @@ Partner CSS
  .mentor-view.investor-view .text4 {
      visibility: visible;
      opacity: 1;
-      transform: translateY(0px);
+     transform: translateY(0px);
  }
 
 

@@ -877,7 +877,7 @@
         right: 74%;
     }
 
-    .spinner-eff.clone{
+    .spinner-eff.clone {
         top: -9%;
     }
 
@@ -898,6 +898,8 @@
 
     .filament {
         width: 50px;
+        left: 38%;
+        bottom: -35%;
     }
 
     .base {
@@ -910,35 +912,41 @@
         bottom: -36%;
     }
 
-    .creator-view .base {
-        top: 66%;
-        left: 40.5%;
-    }
-
     .gear1 {
         width: 36px;
+        left: 20%;
+        top: 5%;
     }
 
     .gear2 {
         width: 28px;
+        top: 25%;
+        left: 19%;
     }
 
     .gear3 {
         width: 55px;
         left: 60%;
+        top: 28%;
     }
 
     .gear4 {
         width: 25px;
+        top: 14%;
+        left: 68%;
     }
 
     .box {
         width: 115px;
-        transform: translateY(800px);
+        top: 100%;
+        /*transform: translateY(800px);*/
     }
 
     .panel {
-        transform: translate(226px, 800px);
+        left: 67%;
+        top: 29%;
+        width: 70px;
+        /*transform: translate(226px, 800px);*/
     }
 
     .wire1,
