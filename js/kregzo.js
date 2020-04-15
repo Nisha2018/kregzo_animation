@@ -182,7 +182,7 @@ const scene = new ScrollMagic.Scene({
     triggerHook: 0
 })
 .setTween(tween)
-.addIndicators({name: "1 (duration: 3000)"})
+// .addIndicators({name: "1 (duration: 3000)"})
 .setPin('#home')
 .addTo(controller);
 
