@@ -154,26 +154,28 @@ window.addEventListener('scroll', () => {
 // scrollmagic
 
 let tween = gsap.timeline();
-tween.from(".gear", { y: -280, opacity: 0, duration: 6, ease: "power3.inOut" })
+tween.from(".gear", { y: -280, rotation:0.001,opacity: 0, duration: 6, ease: "linear" })
     .from(".box", {
         y: 200,
+        rotation:0.001,
         opacity: 0,
         duration: 6,
-        ease: "power3.inOut"
+        ease: "linear"
     }, '-=6')
     .from(".panel", {
         y: 200,
+        rotation:0.001,
         opacity: 0,
         duration: 6,
-        ease: "power3.inOut"
+        ease: "linear"
     }, '-=6')
-    .from(".filament", { x: -200, duration: 6, ease: "power3.inOut" }, '-=6')
-    .from(".base", { x: -130, duration: 6, ease: "power3.inOut" }, '-=6')
-    .from(".creator1", { x: -350, duration: 6, ease: "power3.inOut" }, '-=6')
-    .to(".text1",{y:-400,zIndex:-1,opacity:0,duration:6,ease: "power3.inOut"},'-=6')
-    .fromTo(".text2",{y:400},{y:0,visibility:"visible",opacity:1,duration:6,ease: "power3.inOut"},'-=6')
-    .fromTo(".text3",{y:400},{y:0,duration:6,ease: "power3.inOut"},'-=6')
-    .fromTo(".text4",{y:400},{y:0,duration:6,ease: "power3.inOut"},'-=6')
+    .from(".filament", { x: -200,rotation:0.001, duration: 6, ease: "linear" }, '-=6')
+    .from(".base", { x: -130,rotation:0.001, duration: 6, ease: "linear" }, '-=6')
+    .from(".creator1", { x: -350,rotation:0.001, duration: 6, ease: "linear" }, '-=6')
+    .to(".text1",{y:-400,rotation:0.001,zIndex:-1,opacity:0,duration:6,ease: "linear"},'-=6')
+    .fromTo(".text2",{y:400,rotation:0.001},{y:0,rotation:0.001,visibility:"visible",opacity:1,duration:6,ease: "linear"},'-=6')
+    .fromTo(".text3",{y:400},{y:0,duration:6,ease: "linear"},'-=6')
+    .fromTo(".text4",{y:400},{y:0,duration:6,ease: "linear"},'-=6')
     .to(".left", { display: "block" },'-=4')
     .to(".right", { display: "block" },'-=4')
     .to(".mouse", { display: "none" });

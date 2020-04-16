@@ -62,7 +62,7 @@ a, i, .btn, .btn span, button, img, span, .dropdown-item, .social-icons li:hover
 /* ------------------------
     Box Shadow
 ------------------------*/
-.box-shadow, #header-wrap.fixed-header, .navbar-nav ul, .header-1 #header-wrap:before, .header-1 #header-wrap:after, .btn, .icon-btn, .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, #mc-form input[type="email"], .timeline-content, .timeline-title h2, .contact-media, .accordion .card-header, .counter, .img-box, .tab.style-2, .price-table, .testimonial.style-1 .testimonial-content, .testimonial.style-4 .testimonial-img, .testimonial.style-5 .testimonial-content, .team-member.style-1, .team-link, .team-member.style-2 .team-description, .team-member.style-3, .testimonial.style-2 .testimonial-content, .testimonial.style-2 .testimonial-content:before, .testimonial.style-2 .testimonial-content:after, .testimonial.style-3 .testimonial-img, .team-member.style-4 .team-description, .team-description .team-icon li i, .featured-item, .featured-item:hover, .featured-item.style-1 .featured-icon i, .featured-item.style-2, .featured-item.style-6 .featured-icon i, .post, .post.style-3 .post-image, .post.style-3:hover, .post.style-4 .post-desc, .widget-title, .comment-reply a, .clients-logo
+.box-shadow, .navbar-nav ul, .header-1 #header-wrap:before, .header-1 #header-wrap:after, .btn, .icon-btn, .owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next, #mc-form input[type="email"], .timeline-content, .timeline-title h2, .contact-media, .accordion .card-header, .counter, .img-box, .tab.style-2, .price-table, .testimonial.style-1 .testimonial-content, .testimonial.style-4 .testimonial-img, .testimonial.style-5 .testimonial-content, .team-member.style-1, .team-link, .team-member.style-2 .team-description, .team-member.style-3, .testimonial.style-2 .testimonial-content, .testimonial.style-2 .testimonial-content:before, .testimonial.style-2 .testimonial-content:after, .testimonial.style-3 .testimonial-img, .team-member.style-4 .team-description, .team-description .team-icon li i, .featured-item, .featured-item:hover, .featured-item.style-1 .featured-icon i, .featured-item.style-2, .featured-item.style-6 .featured-icon i, .post, .post.style-3 .post-image, .post.style-3:hover, .post.style-4 .post-desc, .widget-title, .comment-reply a, .clients-logo
 {-webkit-box-shadow: 0px 0px 15px 0px rgba(72,73,121,0.15); -moz-box-shadow: 0px 0px 15px 0px rgba(72,73,121,0.15); box-shadow: 0px 0px 15px 0px rgba(72,73,121,0.15);}
 
 .featured-item.style-2:hover, .price-table:hover{-webkit-box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.5); -moz-box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.5); box-shadow: 0px 20px 50px 0px rgba(153, 153, 153, 0.5);}
@@ -205,12 +205,12 @@ a, i, .btn, .btn span, button, img, span, .dropdown-item, .social-icons li:hover
 /* ------------------------
     Header
 ------------------------*/
-.logo img {height: 60px;}
+.logo img {height: 55px;}
 #header-wrap.fixed-header .logo img {height: 55px;}
-.header {position: absolute; top: 0; width: 100%; z-index: 1200;}
-#header-wrap {padding: 10px 0; background: #ffffff; position: relative;}
-.header-1 #header-wrap{padding: 10px 20px;}
-#header-wrap.fixed-header {padding: 10px 20px; position: fixed; top:0; left:0; width: 100%; z-index: 999 !important; background: #ffffff !important;}
+.header {position: fixed; top: 0; width: 100%; z-index: 1200;}
+#header-wrap {padding: 10px 40px; background: #ffffff; position: relative;}
+.header-1 #header-wrap{padding: 10px 40px;}
+#header-wrap.fixed-header {padding: 10px 40px; position: fixed; top:0; left:0; width: 100%; z-index: 999 !important; background: #ffffff !important;}
 .header-1 #header-wrap:before{content: ""; background: #f9f7fc; width: 96%; height: 30px; position: absolute; left: 2%; bottom: -10px; z-index: -1}
 .header-1 #header-wrap:after{content: ""; background: #fcfbfd; width: 92%; height: 30px; position: absolute; left: 4%; bottom: -20px; z-index: -9}
 #header-wrap.fixed-header:before, #header-wrap.fixed-header:after{display: none;}
