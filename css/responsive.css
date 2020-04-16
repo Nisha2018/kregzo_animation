@@ -866,6 +866,10 @@
         width: 100% !important;
     }
 
+    #about{
+        padding-top: 30px;
+    }
+
     .img-container {
         top: inherit;
     }
@@ -878,7 +882,7 @@
     }
 
     .spinner-eff.clone {
-        top: -9%;
+        top: 24%;
     }
 
     .creator-view .spinner-eff {
@@ -902,9 +906,14 @@
         bottom: -35%;
     }
 
+    .content-right .text2, .content-right .text3, .content-right .text4{
+        padding-top: 140px;
+    }
+
     .base {
         width: 36px;
-        bottom: 18px;
+        left: 40%;
+        top: 132px;
     }
 
     .creator-view .filament {
@@ -1390,10 +1399,10 @@
         padding-top: 100px;
     }
 
-    .img-container {
-        /*bottom: 224px;*/
+    /*.img-container {
+        bottom: 224px;
         position: fixed;
-    }
+    }*/
 
     .wave-animation {
         height: 8em;

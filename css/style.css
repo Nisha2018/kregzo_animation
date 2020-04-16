@@ -1659,7 +1659,7 @@ Ready To Talk CSS
      position: absolute;
      left: 0;
      right: 0;
-     bottom: 40%;
+     bottom: -8%;
      z-index: 99;
  }
 
@@ -1906,8 +1906,10 @@ Partner CSS
  }
 
  .base {
-     transform: translate(0px, 150px);
+     top: 150px;
+     left: 170px;
      z-index: 7;
+     position: absolute;
  }
 
  .wires {
@@ -1952,13 +1954,13 @@ Partner CSS
  }
 
  .wire3 {
-     left: 47%;
-     top: 8px;
+     left: 36.6%;
+    top: 9px;
  }
 
  .wire4 {
-     left: 45%;
-     top: 26px;
+     left: 35%;
+    top: 26px;
  }
 
  .mentor-view .creator1 {
@@ -2036,49 +2038,46 @@ Partner CSS
  .creator1,
  .box,
  .panel,
- .base,
  .filament {
      position: relative;
  }
 
  @-moz-keyframes spin {
      0% {
-         -moz-transform: translateY(-300px) rotate(0deg);
+         -moz-transform: rotate(0deg);
      }
 
      100% {
-         -moz-transform: translateY(-300px) rotate(360deg);
+         -moz-transform: rotate(360deg);
      }
  }
 
  @-webkit-keyframes spin {
      0% {
-         -webkit-transform: translateY(-300px) rotate(0deg);
+         -webkit-transform: rotate(0deg);
      }
 
      100% {
-         -webkit-transform: translateY(-300px) rotate(360deg);
+         -webkit-transform: rotate(360deg);
      }
  }
 
  @keyframes spin {
      0% {
-         transform: translateY(-300px) rotate(0deg);
+         transform:rotate(0deg);
      }
 
      100% {
-         -webkit-transform: translateY(-300px) rotate(360deg);
-         transform: translateY(-300px) rotate(360deg);
+         -webkit-transform: rotate(360deg);
+         transform: rotate(360deg);
      }
  }
 
- .spin {
+ .mentor-view .gear {
      animation: spin 4s linear infinite;
      -webkit-animation: spin 4s linear infinite;
      -moz-animation: spin 4s linear infinite;
  }
-
-
 
  .gear1 {
      left: 20%;
@@ -2172,7 +2171,7 @@ Partner CSS
      position: relative;
  }
 
-
+ .content-right .text1,
  .content-right .text2,
  .content-right .text3,
  .content-right .text4 {
@@ -2197,6 +2196,10 @@ Partner CSS
  .content-right .text3,
  .content-right .text4 {
      transform: translateY(100px);
+ }
+
+ .mentor-view .text2{
+    bottom: -500px;
  }
 
  .mentor-view .text2,

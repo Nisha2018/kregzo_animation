@@ -60,7 +60,7 @@ prev.addEventListener("click", () => {
 
 window.addEventListener('scroll', () => {
     console.log(pageYOffset);
-//     var value = window.scrollY;
+    //     var value = window.scrollY;
     // if (window.pageYOffset <= 450) {
     //     gear1.style.top = (value * 0.3) + 10 + '%';
     //     gear2.style.top = value * 0.38 + '%';
@@ -90,50 +90,50 @@ window.addEventListener('scroll', () => {
         home.classList.remove("investor-view");
     }
 
-    if (window.pageYOffset >= 10 && screen.width <= 800) {
-        imgContainer.classList.add("blur");
-    } else {
-        imgContainer.classList.remove("blur");
-    }
+    // if (window.pageYOffset >= 10 && screen.width <= 800) {
+    //     imgContainer.classList.add("blur");
+    // } else {
+    //     imgContainer.classList.remove("blur");
+    // }
 
-    if (window.pageYOffset <= 20 && screen.width <= 800) {
-        imgContainer.style.position = "relative";
-    } else {
-        imgContainer.style.position = "fixed";
-    }
+    // if (window.pageYOffset <= 20 && screen.width <= 800) {
+    //     imgContainer.style.position = "relative";
+    // } else {
+    //     imgContainer.style.position = "fixed";
+    // }
 
-//     if (window.pageYOffset >= 300) {
-//         mouse.style.display = "none";
-//         prev.style.display = "block";
-//         next.style.display = "block";
-//     } else {
-//         mouse.style.display = "block";
-//         if (screen.width <= 800) {
-//             mouse.style.display = "none";
-//         }
-//         prev.style.display = "none";
-//         next.style.display = "none";
-//     }
+    //     if (window.pageYOffset >= 300) {
+    //         mouse.style.display = "none";
+    //         prev.style.display = "block";
+    //         next.style.display = "block";
+    //     } else {
+    //         mouse.style.display = "block";
+    //         if (screen.width <= 800) {
+    //             mouse.style.display = "none";
+    //         }
+    //         prev.style.display = "none";
+    //         next.style.display = "none";
+    //     }
 
-//     if (window.pageYOffset >= 450) {
-//         gear1.classList.add("spin");
-//         gear2.classList.add("spin");
-//         gear3.classList.add("spin");
-//         gear4.classList.add("spin");
-//     } else {
-//         gear1.classList.remove("spin");
-//         gear2.classList.remove("spin");
-//         gear3.classList.remove("spin");
-//         gear4.classList.remove("spin");
-//     }
+    //     if (window.pageYOffset >= 450) {
+    //         gear1.classList.add("spin");
+    //         gear2.classList.add("spin");
+    //         gear3.classList.add("spin");
+    //         gear4.classList.add("spin");
+    //     } else {
+    //         gear1.classList.remove("spin");
+    //         gear2.classList.remove("spin");
+    //         gear3.classList.remove("spin");
+    //         gear4.classList.remove("spin");
+    //     }
 
-//     if (window.pageYOffset >= 600) {
-//         imgContainer.style.display = "none";
-//         prev.style.display = "none";
-//         next.style.display = "none";
-//     } else {
-//         imgContainer.style.display = "grid";
-//     }
+    //     if (window.pageYOffset >= 600) {
+    //         imgContainer.style.display = "none";
+    //         prev.style.display = "none";
+    //         next.style.display = "none";
+    //     } else {
+    //         imgContainer.style.display = "grid";
+    //     }
 
 });
 
@@ -153,46 +153,51 @@ window.addEventListener('scroll', () => {
 
 // scrollmagic
 
-const tween = gsap.timeline();
-tween.from(".gear",{y:-500,stagger:0.2,opacity:0.5,duration:0.5,ease:"sine.inOut"})
-     .from(".box",{y:500,opacity:0,duration:1,ease:"sine.inOut"})
-     .from(".panel",{y:500,opacity:0,duration:1.5,ease:"sine.inOut"})
-     .from(".filament",{x:-300,ease:"power2.out"})
-     .to(".base",{x:170,duration:1.8})
-     .from(".creator1",{x:-400,duration:3.5,ease:"sine.inOut"})
-     .to(".gear",{rotation:360,duration:"infinite"})
-     .to(".left",{display:"block"})
-     .to(".right",{display:"block"})
-     .to(".mouse",{display:"none"});
-
-if(screen.width<=800){
-    const tween = gsap.timeline();
-    tween.to(".base",{x:138,duration:1.8,delay:5})
-}
+let tween = gsap.timeline();
+tween.from(".gear", { y: -280, opacity: 0, duration: 6, ease: "power3.inOut" })
+    .from(".box", {
+        y: 200,
+        opacity: 0,
+        duration: 6,
+        ease: "power3.inOut"
+    }, '-=6')
+    .from(".panel", {
+        y: 200,
+        opacity: 0,
+        duration: 6,
+        ease: "power3.inOut"
+    }, '-=6')
+    .from(".filament", { x: -200, duration: 6, ease: "power3.inOut" }, '-=6')
+    .from(".base", { x: -130, duration: 6, ease: "power3.inOut" }, '-=6')
+    .from(".creator1", { x: -350, duration: 6, ease: "power3.inOut" }, '-=6')
+    .to(".text1",{y:-400,zIndex:-1,opacity:0,duration:6,ease: "power3.inOut"},'-=6')
+    .fromTo(".text2",{y:400},{y:0,visibility:"visible",opacity:1,duration:6,ease: "power3.inOut"},'-=6')
+    .fromTo(".text3",{y:400},{y:0,duration:6,ease: "power3.inOut"},'-=6')
+    .fromTo(".text4",{y:400},{y:0,duration:6,ease: "power3.inOut"},'-=6')
+    .to(".left", { display: "block" },'-=4')
+    .to(".right", { display: "block" },'-=4')
+    .to(".mouse", { display: "none" });
 
 const tween2 = gsap.timeline();
-tween2.to(".left",{display:"none"})
-      .to(".right",{display:"none"})
-      .to(".img-container",{display:"none"},"-=2")
+tween2.to(".left", { display: "none" },'-=4')
+    .to(".right", { display: "none" },'-=4')
 
-const controller = new ScrollMagic.Controller();
-const scene = new ScrollMagic.Scene({
-    triggerElement: '#home',
-    duration: 3000,
-    triggerHook: 0
-})
-.setTween(tween)
-// .addIndicators({name: "1 (duration: 3000)"})
-.setPin('#home')
-.addTo(controller);
+
+let controller = new ScrollMagic.Controller();
+let scene = new ScrollMagic.Scene({
+        triggerElement: '#home',
+        duration: '100%',
+        triggerHook: 0
+    })
+    .setTween(tween)
+    // .addIndicators({ name: "1" })
+    .setPin('#home')
+    .addTo(controller);
 
 
 const scene2 = new ScrollMagic.Scene({
-    triggerElement:"#about",
-})
+        triggerElement: "#about",
+    })
 
-.setTween(tween2)
-.addTo(controller);
-
-
-
+    .setTween(tween2)
+    .addTo(controller);
