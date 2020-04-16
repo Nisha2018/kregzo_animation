@@ -191,7 +191,7 @@ let scene = new ScrollMagic.Scene({
         triggerHook: 0
     })
     .setTween(tween)
-    .addIndicators({ name: "1" })
+    // .addIndicators({ name: "1" })
     .setPin('#home')
     .addTo(controller);
 
