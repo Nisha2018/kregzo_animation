@@ -1875,6 +1875,8 @@ Partner CSS
      display: grid;
      justify-content: start;
      position: relative;
+     transform-style: preserve-3d;
+     backface-visibility: hidden;
  }
 
 
