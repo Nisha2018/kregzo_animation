@@ -181,8 +181,8 @@ tween.from(".gear", { y: -280, rotation:0.001,opacity: 0, duration: 6, ease: "li
 
 const tween2 = gsap.timeline();
 tween2.to(".left", { display: "none" })
-    .to(".right", { display: "none" },'-=4')
-    .to(".text2",{visibility:"hidden",opacity:0},'-=4')
+    .to(".right", { display: "none" })
+    .to(".text2",{visibility:"hidden",opacity:0})
 
 
 let controller = new ScrollMagic.Controller();
@@ -192,7 +192,7 @@ let scene = new ScrollMagic.Scene({
         triggerHook: 0
     })
     .setTween(tween)
-    .addIndicators({ name: "1" })
+    // .addIndicators({ name: "1" })
     .setPin('#home')
     .addTo(controller);
 
