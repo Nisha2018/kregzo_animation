@@ -59,7 +59,7 @@ prev.addEventListener("click", () => {
 
 
 window.addEventListener('scroll', () => {
-    console.log(pageYOffset);
+    // console.log(pageYOffset);
     //     var value = window.scrollY;
     // if (window.pageYOffset <= 450) {
     //     gear1.style.top = (value * 0.3) + 10 + '%';
@@ -153,36 +153,36 @@ window.addEventListener('scroll', () => {
 
 // scrollmagic
 let tween = gsap.timeline();
-tween.from(".gear", { y: -280, rotation:0.001,opacity: 0, duration: 6, ease: "linear" })
+tween.from(".gear", { y: -280, rotation: 0.001, opacity: 0, duration: 6, ease: "linear" })
     .from(".box", {
         y: 200,
-        rotation:0.001,
+        rotation: 0.001,
         opacity: 0,
         duration: 6,
         ease: "linear"
     }, '-=6')
     .from(".panel", {
         y: 200,
-        rotation:0.001,
+        rotation: 0.001,
         opacity: 0,
         duration: 6,
         ease: "linear"
     }, '-=6')
-    .from(".filament", { x: -200,rotation:0.001, duration: 6, ease: "linear" }, '-=6')
-    .from(".base", { x: -130,rotation:0.001, duration: 6, ease: "linear" }, '-=6')
-    .from(".creator1", { x: -350,rotation:0.001, duration: 6, ease: "linear" }, '-=6')
-    .to(".text1",{y:-400,rotation:0.001,zIndex:-1,opacity:0,duration: 3,ease: "linear"},'-=6')
-    .fromTo(".text2",{y:400,rotation:0.001},{y:0,rotation:0.001,visibility:"visible",opacity:1,duration:6,ease: "linear"},'-=6')
-    .fromTo(".text3",{y:400},{y:0,duration:6,ease: "linear"},'-=6')
-    .fromTo(".text4",{y:400},{y:0,duration:6,ease: "linear"},'-=6')
-    .to(".left", { display: "block" },'-=4')
-    .to(".right", { display: "block" },'-=4')
+    .from(".filament", { x: -200, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+    .from(".base", { x: -130, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+    .from(".creator1", { x: -350, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+    .to(".text1", { y: -400, rotation: 0.001, zIndex: -1, opacity: 0, duration: 3, ease: "linear" }, '-=6')
+    .fromTo(".text2", { y: 400, rotation: 0.001 }, { y: 0, rotation: 0.001, visibility: "visible", opacity: 1, duration: 6, ease: "linear" }, '-=6')
+    .fromTo(".text3", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
+    .fromTo(".text4", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
+    .to(".left", { display: "block" }, '-=4')
+    .to(".right", { display: "block" }, '-=4')
     .to(".mouse", { display: "none" });
 
 const tween2 = gsap.timeline();
 tween2.to(".left", { display: "none" })
     .to(".right", { display: "none" })
-    .to(".text2",{visibility:"hidden",opacity:0})
+    .to(".text2", { visibility: "hidden", opacity: 0 })
 
 
 let controller = new ScrollMagic.Controller();
@@ -203,3 +203,27 @@ let scene2 = new ScrollMagic.Scene({
 
     .setTween(tween2)
     .addTo(controller);
+
+
+//For mobile view
+gsap.registerPlugin(Draggable);
+$(window).on("resize", resize);
+
+resize();
+
+function resize() {
+
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        Draggable.create("#home", {
+            type: "y",
+            bounds: document.getElementById("home"),
+            inertia: true,
+            onClick: function() {
+                console.log("clicked");
+            },
+            onDragEnd: function() {
+                console.log("drag ended");
+            }
+        });
+    }
+}
