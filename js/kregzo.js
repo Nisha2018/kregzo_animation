@@ -212,7 +212,6 @@ let scene2 = new ScrollMagic.Scene({
 gsap.registerPlugin(Draggable);
 if (screen.width <= 800) {
     Draggable.create("#home", {
-        bounds: mainContainer,
         type: "scroll",
         onDragStart: function() {
             console.log("drag started");
