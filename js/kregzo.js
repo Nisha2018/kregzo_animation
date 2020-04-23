@@ -172,23 +172,23 @@ if (screen.width <= 800) {
     }
 
     if (window.PointerEvent) {
-        window.addEventListener('pointerdown', gestureStart);
+        home.addEventListener('pointerdown', gestureStart);
 
-        window.addEventListener('pointermove', gestureMove);
+        home.addEventListener('pointermove', gestureMove);
 
-        window.addEventListener('pointerup', gestureEnd);
+        home.addEventListener('pointerup', gestureEnd);
     } else {
-        window.addEventListener('touchdown', gestureStart);
+        home.addEventListener('touchstart', gestureStart);
 
-        window.addEventListener('touchmove', gestureMove);
+        home.addEventListener('touchmove', gestureMove);
 
-        window.addEventListener('touchup', gestureEnd);
+        home.addEventListener('touchend', gestureEnd);
 
-        window.addEventListener('mousedown', gestureStart);
+        home.addEventListener('mousedown', gestureStart);
 
-        window.addEventListener('mousemove', gestureMove);
+        home.addEventListener('mousemove', gestureMove);
 
-        window.addEventListener('mouseup', gestureEnd);
+        home.addEventListener('mouseup', gestureEnd);
     }
 
 
