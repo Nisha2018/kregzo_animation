@@ -60,6 +60,7 @@ prev.addEventListener("click", () => {
 
 
 window.addEventListener('scroll', () => {
+    // console.log(pageYOffset);
 
     if (window.pageYOffset <= 122) {
         home.classList.remove("mentor-view");
@@ -142,28 +143,39 @@ let scene2 = new ScrollMagic.Scene({
 if (screen.width <= 800) {
     let initialPosition = null;
     let moving = false;
-    let transform = 0;
 
-    const gestureStart = (e) => {
-        initialPosition = e.pageX;
-        moving = true;
-    }
 
     const gestureMove = (e) => {
-        if (moving) {
-            const currentPosition = e.pageX;
-            const diff = currentPosition - initialPosition;
-            if (counter === 1) {
-                home.classList.add("mentor-view");
-                counter++;
-            } else if (counter === 2) {
-                home.classList.add("investor-view");
-                counter++;
-            } else if (counter === 3) {
-                home.classList.remove("investor-view", "mentor-view");
-                counter = 1;
-            }
+        if (window.pageYOffset >= 680) {
+            if (moving) {
+                e.preventDefault();
+                const currentPosition = e.pageX;
+                // const diff = currentPosition - initialPosition;
+                var x = e.targetTouches[0].clientX;
+                var midpoint = Math.floor(screen.width / 2);
+                console.log(x,midpoint);
+                if (x > midpoint) {
+                    if (counter === 1) {
+                        home.classList.add("mentor-view");
+                        counter++;
+                    } else if (counter === 2) {
+                        home.classList.add("investor-view");
+                        counter++;
+                    } else if (counter === 3) {
+                        home.classList.remove("investor-view", "mentor-view");
+                        counter = 1;
+                    }
+                }else {
+                    if (counter === 3) {
+                        home.classList.remove("investor-view");
+                        counter--;
+                    } else if (counter === 2) {
+                        home.classList.remove("mentor-view");
+                        counter--;
 
+                    }
+                }
+            }
         }
     };
 
@@ -171,26 +183,14 @@ if (screen.width <= 800) {
         moving = false;
     }
 
-    if (window.PointerEvent) {
-        home.addEventListener('pointerdown', gestureStart);
 
-        home.addEventListener('pointermove', gestureMove);
+    home.addEventListener('touchstart', (e) => {
+        initialPosition = e.pageX;
+        moving = true;
 
-        home.addEventListener('pointerup', gestureEnd);
-    } else {
-        home.addEventListener('touchstart', gestureStart);
-
-        home.addEventListener('touchmove', gestureMove);
-
-        home.addEventListener('touchend', gestureEnd);
-
-        home.addEventListener('mousedown', gestureStart);
-
-        home.addEventListener('mousemove', gestureMove);
-
-        home.addEventListener('mouseup', gestureEnd);
-    }
-
+        document.body.addEventListener('touchmove', gestureMove);
+        document.body.addEventListener('touchend', gestureEnd);
+    }, true);
 
 }
 
