@@ -148,10 +148,12 @@ if (screen.width <= 800) {
     const gestureMove = (e) => {
         if (window.pageYOffset >= 680) {
             if (moving) {
-                e.preventDefault();
+                // e.preventDefault();
                 const currentPosition = e.pageX;
                 // const diff = currentPosition - initialPosition;
-                var x = e.targetTouches[0].clientX;
+                // var x = e.targetTouches[0].clientX;
+                var touch = e.targetTouches[0];
+                var x = touch.pageX;
                 var midpoint = Math.floor(screen.width / 2);
                 console.log(x,midpoint);
                 if (x > midpoint) {
@@ -188,9 +190,9 @@ if (screen.width <= 800) {
         initialPosition = e.pageX;
         moving = true;
 
-        document.body.addEventListener('touchmove', gestureMove);
-        document.body.addEventListener('touchend', gestureEnd);
-    }, true);
+        document.body.addEventListener('touchmove', gestureMove,false);
+        document.body.addEventListener('touchend', gestureEnd,false);
+    }, false);
 
 }
 
