@@ -1655,10 +1655,6 @@ Ready To Talk CSS
      font-size: 20px;
  }
 
- .home{
-     touch-action: none;
- }
-
  .mouse {
      position: absolute;
      left: 0;
