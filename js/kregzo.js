@@ -141,22 +141,30 @@ let scene2 = new ScrollMagic.Scene({
 //For mobile view
 
 if (screen.width <= 800) {
-    let initialPosition = null;
-    let moving = false;
+    home.addEventListener('touchstart', handleTouchStart, false);
+    home.addEventListener('touchmove', handleTouchMove, false);
+    var xDown = null;
+    var yDown = null;
 
+    function handleTouchStart(evt) {
+        xDown = evt.touches[0].clientX;
+        yDown = evt.touches[0].clientY;
+    };
 
-    const gestureMove = (e) => {
+    function handleTouchMove(evt) {
         if (window.pageYOffset >= 680) {
-            if (moving) {
-                // e.preventDefault();
-                const currentPosition = e.pageX;
-                // const diff = currentPosition - initialPosition;
-                // var x = e.targetTouches[0].clientX;
-                var touch = e.targetTouches[0];
-                var x = touch.pageX;
-                var midpoint = Math.floor(screen.width / 2);
-                console.log(x,midpoint);
-                if (x > midpoint) {
+            if (!xDown || !yDown) {
+                return;
+            }
+            var xUp = evt.touches[0].clientX;
+            var yUp = evt.touches[0].clientY;
+            var xDiff = xDown - xUp;
+            var yDiff = yDown - yUp;
+
+            if (Math.abs(xDiff) > Math.abs(yDiff)) { /*most significant*/
+                if (xDiff > 0) {
+                    /* left swipe */
+                    console.log("left swipe");
                     if (counter === 1) {
                         home.classList.add("mentor-view");
                         counter++;
@@ -167,38 +175,89 @@ if (screen.width <= 800) {
                         home.classList.remove("investor-view", "mentor-view");
                         counter = 1;
                     }
-                }else {
+                } else {
+                    /* right swipe */
+                    console.log("right swipe");
                     if (counter === 3) {
                         home.classList.remove("investor-view");
                         counter--;
                     } else if (counter === 2) {
                         home.classList.remove("mentor-view");
                         counter--;
-
                     }
                 }
+            } else {
+                if (yDiff > 0) {
+                    /* up swipe */
+                    console.log("up swipe");
+                } else {
+                    /* down swipe */
+                    console.log("down swipe");
+                }
             }
-        }
-    };
-
-    const gestureEnd = (e) => {
-        moving = false;
+            /* reset values */
+            xDown = null;
+            yDown = null;
+        };
     }
-
-
-    home.addEventListener('touchstart', (e) => {
-        initialPosition = e.pageX;
-        moving = true;
-
-        document.body.addEventListener('touchmove', gestureMove,false);
-        document.body.addEventListener('touchend', gestureEnd,false);
-    }, false);
-
 }
 
 
 
 
+
+
+// if (screen.width <= 800) {
+//     var xDown = null;
+//     var yDown = null;
+//     let moving = false;
+
+//     const gestureMove = (e) => {
+//         if (window.pageYOffset >= 680) {
+//             if (moving) {
+//                 if (!xDown || !yDown) {
+//                     return;
+//                 }
+//                 var xUp = evt.touches[0].clientX;
+//                 var yUp = evt.touches[0].clientY;
+//                 var xDiff = xDown - xUp;
+//                 var yDiff = yDown - yUp;
+
+//                 if (Math.abs(xDiff) > Math.abs(yDiff)) { /*most significant*/
+//                     if (xDiff > 0) {
+//                         console.log("Left swipe");
+//                     } else {
+//                         console.log("Right swipe");
+//                     }
+//                 } else {
+//                     if (yDiff > 0) {
+//                         console.log("up swipe");
+//                     } else {
+//                         console.log("Down swipe");
+//                     }
+//                 }
+//                 /* reset values */
+//                 xDown = null;
+//                 yDown = null;
+//             }
+//         }
+//     };
+
+//     const gestureEnd = (e) => {
+//         moving = false;
+//     }
+
+
+//     home.addEventListener('touchstart', (e) => {
+//         xDown = evt.touches[0].clientX;
+//         yDown = evt.touches[0].clientY;
+//         moving = true;
+
+//         document.body.addEventListener('touchmove', gestureMove, false);
+//         document.body.addEventListener('touchend', gestureEnd, false);
+//     }, false);
+
+// }
 
 
 

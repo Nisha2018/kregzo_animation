@@ -1655,6 +1655,10 @@ Ready To Talk CSS
      font-size: 20px;
  }
 
+ .home{
+     -webkit-backface-visibility: hidden;
+ }
+
  .mouse {
      position: absolute;
      left: 0;
@@ -1877,6 +1881,7 @@ Partner CSS
      position: relative;
      transform-style: preserve-3d;
      backface-visibility: hidden;
+     -webkit-backface-visibility: hidden;
  }
 
 
