@@ -2185,6 +2185,7 @@ Partner CSS
      grid-row: 2;
      grid-column: 1;
      transition: all 0.5s linear;
+     position: relative;
  }
 
  .content-right .text1 {
@@ -2192,20 +2193,20 @@ Partner CSS
      padding-left: 20px;
  }
 
- .content-right .text1,
- .content-right .text2,
- .content-right .text3,
- .content-right .text4 {
-     position: relative;
- }
 
  .content-right .text3,
  .content-right .text4 {
-     transform: translateY(100px);
+     transform: translateX(750px);
+     transition: all 1s ease-in;
+ }
+
+ .mentor-view .text3,.mentor-view.investor-view .text4{
+     transform: translateX(0px);
  }
 
  .mentor-view .text2{
-    bottom: -500px;
+    bottom: -2000px;
+    opacity: 0.4;
  }
 
  .mentor-view .text2,
@@ -2218,9 +2219,7 @@ Partner CSS
  .mentor-view.investor-view .text4 {
      visibility: visible;
      opacity: 1;
-     transform: translateY(0px);
  }
-
 
  .hide {
      visibility: hidden;
