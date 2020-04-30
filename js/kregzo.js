@@ -104,12 +104,12 @@ tween.from(".gear", { y: -280, rotation: 0.001, opacity: 0, duration: 6, ease: "
     .from(".base", { x: -130, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
     .from(".creator1", { x: -350, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
     .to(".text1", { y: -400, rotation: 0.001, zIndex: -1, opacity: 0, duration: 3, ease: "linear" }, '-=6')
-    .from(".track", {y: 450, rotation: 0.001, opacity: 0, duration: 6, ease: "linear" }, '-=6')
-    // .to(".text3",{ x: 0, duration: 6, ease: "linear" }, '-=6')
-    // .to(".text4",{ x: 0, duration: 6, ease: "linear" }, '-=6')
+    .fromTo(".text2", { y: 400, rotation: 0.001 }, { y: 0, rotation: 0.001, visibility: "visible", opacity: 1, duration: 6, ease: "linear" }, '-=6')
+    .fromTo(".text3", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
+    .fromTo(".text4", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
     .to(".left", { display: "block" }, '-=4')
     .to(".right", { display: "block" }, '-=4')
-    .to(".mouse", { display: "none" });s
+    .to(".mouse", { display: "none" });
 
 
 const tween2 = gsap.timeline();
@@ -205,59 +205,6 @@ if (screen.width <= 800) {
 
 
 
-
-
-// if (screen.width <= 800) {
-//     var xDown = null;
-//     var yDown = null;
-//     let moving = false;
-
-//     const gestureMove = (e) => {
-//         if (window.pageYOffset >= 680) {
-//             if (moving) {
-//                 if (!xDown || !yDown) {
-//                     return;
-//                 }
-//                 var xUp = evt.touches[0].clientX;
-//                 var yUp = evt.touches[0].clientY;
-//                 var xDiff = xDown - xUp;
-//                 var yDiff = yDown - yUp;
-
-//                 if (Math.abs(xDiff) > Math.abs(yDiff)) { /*most significant*/
-//                     if (xDiff > 0) {
-//                         console.log("Left swipe");
-//                     } else {
-//                         console.log("Right swipe");
-//                     }
-//                 } else {
-//                     if (yDiff > 0) {
-//                         console.log("up swipe");
-//                     } else {
-//                         console.log("Down swipe");
-//                     }
-//                 }
-//                 /* reset values */
-//                 xDown = null;
-//                 yDown = null;
-//             }
-//         }
-//     };
-
-//     const gestureEnd = (e) => {
-//         moving = false;
-//     }
-
-
-//     home.addEventListener('touchstart', (e) => {
-//         xDown = evt.touches[0].clientX;
-//         yDown = evt.touches[0].clientY;
-//         moving = true;
-
-//         document.body.addEventListener('touchmove', gestureMove, false);
-//         document.body.addEventListener('touchend', gestureEnd, false);
-//     }, false);
-
-// }
 
 
 
