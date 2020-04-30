@@ -890,7 +890,7 @@
     }
 
     .spinner-eff.clone {
-        top: 24%;
+        top: 19%;
     }
 
     .creator-view .spinner-eff {
@@ -1481,6 +1481,7 @@
 
     .content-right .text1 {
         grid-column: 1;
+        /*margin-top: 20px;*/
     }
 
     .content-right .text2 {
