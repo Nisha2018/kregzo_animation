@@ -2199,10 +2199,12 @@ Partner CSS
      position: relative;
  }
 
+ @media(min-width: 992px){
+
  .content-right .text3,
  .content-right .text4 {
      transform: translateY(100px);
- }
+ }    
 
  .mentor-view .text2{
     bottom: -2500px;
@@ -2221,6 +2223,7 @@ Partner CSS
      transform: translateY(0px);
  }
 
+}
 
  .hide {
      visibility: hidden;

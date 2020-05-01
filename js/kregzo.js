@@ -84,41 +84,39 @@ window.addEventListener('scroll', () => {
 
 
 // scrollmagic
-let tween = gsap.timeline();
-tween.from(".gear", { y: -280, rotation: 0.001, opacity: 0, duration: 6, ease: "linear" })
-    .from(".box", {
-        y: 200,
-        rotation: 0.001,
-        opacity: 0,
-        duration: 6,
-        ease: "linear"
-    }, '-=6')
-    .from(".panel", {
-        y: 200,
-        rotation: 0.001,
-        opacity: 0,
-        duration: 6,
-        ease: "linear"
-    }, '-=6')
-    .from(".filament", { x: -200, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
-    .from(".base", { x: -130, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
-    .from(".creator1", { x: -350, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
-    .to(".text1", { y: -400, rotation: 0.001, zIndex: -1, opacity: 0, duration: 3, ease: "linear" }, '-=6')
-    .fromTo(".text2", { y: 400, rotation: 0.001 }, { y: 0, rotation: 0.001, visibility: "visible", opacity: 1, duration: 6, ease: "linear" }, '-=6')
-    .fromTo(".text3", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
-    .fromTo(".text4", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
-    .to(".left", { display: "block" }, '-=4')
-    .to(".right", { display: "block" }, '-=4')
-    .to(".mouse", { display: "none" });
-
-
-const tween2 = gsap.timeline();
-tween2.to(".left", { display: "none" })
-    .to(".right", { display: "none" })
-    .to(".text2", { visibility: "hidden", opacity: 0 })
-
-
 let controller = new ScrollMagic.Controller();
+
+var mql = window.matchMedia('(min-width: 992px)');
+
+if (mql.matches) {
+
+    let tween = gsap.timeline();
+    tween.from(".gear", { y: -280, rotation: 0.001, opacity: 0, duration: 6, ease: "linear" })
+        .from(".box", {
+            y: 200,
+            rotation: 0.001,
+            opacity: 0,
+            duration: 6,
+            ease: "linear"
+        }, '-=6')
+        .from(".panel", {
+            y: 200,
+            rotation: 0.001,
+            opacity: 0,
+            duration: 6,
+            ease: "linear"
+        }, '-=6')
+        .from(".filament", { x: -200, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+        .from(".base", { x: -130, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+        .from(".creator1", { x: -350, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+        .to(".text1", { y: -400, rotation: 0.001, zIndex: -1, opacity: 0, duration: 3, ease: "linear" }, '-=6')
+        .fromTo(".text2", { y: 400, rotation: 0.001 }, { y: 0, rotation: 0.001, visibility: "visible", opacity: 1, duration: 6, ease: "linear" }, '-=6')
+        .fromTo(".text3", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
+        .fromTo(".text4", { y: 400 }, { y: 0, duration: 6, ease: "linear" }, '-=6')
+        .to(".left", { display: "block" }, '-=4')
+        .to(".right", { display: "block" }, '-=4')
+        .to(".mouse", { display: "none" });
+
 let scene = new ScrollMagic.Scene({
         triggerElement: '#home',
         duration: '100%',
@@ -129,6 +127,13 @@ let scene = new ScrollMagic.Scene({
     .setPin('#home')
     .addTo(controller);
 
+}
+
+const tween2 = gsap.timeline();
+tween2.to(".left", { display: "none" })
+    .to(".right", { display: "none" })
+    .to(".text2", { visibility: "hidden", opacity: 0 })
+
 
 let scene2 = new ScrollMagic.Scene({
         triggerElement: "#about",
@@ -138,9 +143,58 @@ let scene2 = new ScrollMagic.Scene({
     .addTo(controller);
 
 
+var mql2 = window.matchMedia('(max-width: 800px)');
+
+if (mql2.matches) {
+
+    let mobileTween = gsap.timeline();
+    mobileTween.from(".gear", { y: -280, rotation: 0.001, opacity: 0, duration: 6, ease: "linear" })
+        .from(".box", {
+            y: 200,
+            rotation: 0.001,
+            opacity: 0,
+            duration: 6,
+            ease: "linear"
+        }, '-=6')
+        .from(".panel", {
+            y: 200,
+            rotation: 0.001,
+            opacity: 0,
+            duration: 6,
+            ease: "linear"
+        }, '-=6')
+        .from(".filament", { x: -200, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+        .from(".base", { x: -130, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+        .from(".creator1", { x: -350, rotation: 0.001, duration: 6, ease: "linear" }, '-=6')
+        .to(".text1", { y: -400, rotation: 0.001, opacity: 0, duration: 3, ease: "linear" }, '-=6')
+        .fromTo(".text2", { y: 400, rotation: 0.001 }, { y: 0, rotation: 0.001, visibility: "visible", opacity: 1, duration: 6, ease: "linear" }, '-=6')
+        .to(".left", { display: "block" }, '-=4')
+        .to(".right", { display: "block" }, '-=4')
+        .to(".mouse", { display: "none" });
+
+let scene = new ScrollMagic.Scene({
+        triggerElement: '#home',
+        duration: '100%',
+        triggerHook: 0
+    })
+    .setTween(mobileTween)
+    // .addIndicators({ name: "1" })
+    .setPin('#home')
+    .addTo(controller);
+
+}
+
+
+
 //For mobile view
 
 if (screen.width <= 800) {
+    const track = document.querySelector(".track");
+    let text = document.querySelectorAll(".track .text");
+    track.style.transition = "transform 1.5s ease-in-out";
+    const size = text[0].clientWidth + 30;
+    console.log(size);
+
     home.addEventListener('touchstart', handleTouchStart, false);
     home.addEventListener('touchmove', handleTouchMove, false);
     var xDown = null;
@@ -167,12 +221,15 @@ if (screen.width <= 800) {
                     console.log("left swipe");
                     if (counter === 1) {
                         home.classList.add("mentor-view");
+                        track.style.transform = 'translateX(' + (-size * counter) + 'px)';
                         counter++;
                     } else if (counter === 2) {
                         home.classList.add("investor-view");
+                        track.style.transform = 'translateX(' + (-size * counter) + 'px)';
                         counter++;
                     } else if (counter === 3) {
                         home.classList.remove("investor-view", "mentor-view");
+                         track.style.transform = 'translateX(0)';
                         counter = 1;
                     }
                 } else {
@@ -180,9 +237,11 @@ if (screen.width <= 800) {
                     console.log("right swipe");
                     if (counter === 3) {
                         home.classList.remove("investor-view");
+                        // track.style.transform = 'translateX(' + (size) + 'px)';
                         counter--;
                     } else if (counter === 2) {
                         home.classList.remove("mentor-view");
+                         // track.style.transform = 'translateX(' + (size * 2) + 'px)';
                         counter--;
                     }
                 }
