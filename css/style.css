@@ -1925,13 +1925,13 @@ Partner CSS
      height: 0px;
      overflow: hidden;
      z-index: 5;
-     transition: all 2s linear;
+     transition: all 1s linear;
  }
 
  .mentor-view .wires {
      overflow: overlay;
      height: 300px;
-     transition: all 10s linear;
+     transition: all 8s linear;
  }
 
  /* Hide scrollbar for Chrome, Safari and Opera */
@@ -1969,9 +1969,9 @@ Partner CSS
     top: 26px;
  }
 
- .mentor-view .creator1 {
+ /*.mentor-view .creator1 {
      transition: all 0.2s linear;
- }
+ }*/
 
  .creator2 {
      position: relative;
@@ -1981,7 +1981,7 @@ Partner CSS
  }
 
  .mentor-view .creator2 {
-     transform: translateX(0) scale(1) rotate(0deg);
+     transform: translateX(0) rotate(0deg);
      opacity: 1;
      visibility: visible;
  }
@@ -2023,8 +2023,6 @@ Partner CSS
      z-index: 5;
      visibility: hidden;
      opacity: 0;
-     transition: all 3s linear;
-     transition-delay: 0.5s;
  }
 
  .investor-view .creator2 {
@@ -2120,13 +2118,11 @@ Partner CSS
  }
 
  .panel {
-     /*transform: translate(274px, 500px);*/
      left: 63%;
      top: 38%;
  }
 
  .creator1 {
-     /*transform: translate(-250px, 85px);*/
      left: 22%;
      top: 39%;
      z-index: 1;
@@ -2137,13 +2133,19 @@ Partner CSS
      left: 29%;
      bottom: 12%;
      visibility: hidden;
-     transform: scale(0);
-     transition: all 2.5s linear;
+ }
+
+ @keyframes flash{
+     0%{opacity: 1}
+     50%{opacity: 0}
+     100%{opacity: 1}
  }
 
  .mentor-view .light-bulb {
      visibility: visible;
-     transform: scale(1);
+     animation-name: flash;
+     animation-duration: 0.5s;
+     animation-iteration-count: 4;
  }
 
  .mentor2 {
@@ -2171,6 +2173,8 @@ Partner CSS
      opacity: 1;
  }
 
+
+ @media(min-width: 992px){
  .content-right {
      display: grid;
      align-items: center;
@@ -2197,9 +2201,7 @@ Partner CSS
  .content-right .text3,
  .content-right .text4 {
      position: relative;
- }
-
- @media(min-width: 992px){
+ }    
 
  .content-right .text3,
  .content-right .text4 {

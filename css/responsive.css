@@ -885,7 +885,7 @@
     .spinner-eff {
         width: 100px;
         height: 100px;
-        top: -8%;
+        top: -2%;
         right: 74%;
     }
 
@@ -1452,36 +1452,39 @@
 
     .content-right.mobile {
         display: grid;
-        width: 100%;
-        height: 100%;
+        grid-template-columns: 100% 100%;
+        grid-column-gap: 20px;
+        grid-template-rows: auto;
         /*background: #aaaade;*/
         overflow: hidden;
     }
 
     .content-right.mobile .track {
         display: grid;
-        grid-template-columns: 100% 100% 100% 100%;
-        grid-column-gap: 30px;
+        grid-row: 1;
+        grid-template-columns: 100% 100% 100%;
+        grid-column-gap: 20px;
         grid-template-rows: auto;
         /*border: 2px solid #333;*/
         /*overflow-x: scroll;*/
         /*overflow-y: hidden;*/
     }
 
-    .content-right.mobile .track::-webkit-scrollbar{
+    .content-right.mobile .track::-webkit-scrollbar {
         display: none;
     }
 
-    .content-right.mobile .track .text{
+    .content-right.mobile .track .text {
         display: grid;
         grid-row: 1;
         width: 100%;
 
     }
 
-    .content-right .text1 {
-        grid-column: 1;
-        /*margin-top: 20px;*/
+    .content-right.mobile .text1 {
+        grid-row: 1;
+        padding-top: 20px;
+        transition: all 0.5s ease-in-out;
     }
 
     .content-right .text2 {
@@ -1507,7 +1510,7 @@
 
 }
 
-
+/*desktop view*/
 @media (min-width: 992px) {
     .fullscreen-banner .img-side {
         padding-left: 111px;
@@ -1548,6 +1551,35 @@
     .footer .separator {
         border-right: 1px solid grey;
         border-left: 1px solid grey;
+    }
+
+}
+
+
+/*tab view*/
+@media (min-width: 767px) and (max-width: 991px) {
+    .content-right.mobile .text1 {
+        padding-top: 50px;
+    }
+
+    .content-right.mobile .track .text {
+        align-content: center;
+    }
+
+    .wire1 {
+        left: 250px;
+    }
+
+    .wire2 {
+        left: 236px;
+    }
+
+    .wire3 {
+        left: 48%;
+    }
+
+    .wire4 {
+        left: 46.7%;
     }
 
 }
