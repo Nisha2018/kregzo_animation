@@ -1123,6 +1123,7 @@
      position: fixed;
      bottom: 0;
      left: 0;
+     z-index: -1;
  }
 
 
@@ -2136,16 +2137,15 @@ Partner CSS
  }
 
  @keyframes flash{
-     0%{opacity: 1}
-     50%{opacity: 0}
+     0%{opacity: 0}
      100%{opacity: 1}
  }
 
  .mentor-view .light-bulb {
      visibility: visible;
      animation-name: flash;
-     animation-duration: 0.5s;
-     animation-iteration-count: 4;
+     animation-duration: 3s;
+     /*animation-iteration-count: 3;*/
  }
 
  .mentor2 {

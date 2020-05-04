@@ -14,6 +14,10 @@ let gear4 = document.querySelector(".gear4");
 let box = document.querySelector(".box");
 let panel = document.querySelector(".panel");
 let mainContainer = document.getElementById("main-container");
+const track = document.querySelector(".track");
+let text = document.querySelectorAll(".track .text");
+const size = text[0].clientWidth + 20;
+console.log(size);
 
 var counter = 1;
 
@@ -23,18 +27,22 @@ prev.classList.add("button-hover");
 next.addEventListener("click", () => {
     if (counter === 1) {
         home.classList.add("mentor-view");
+        track.style.transform = 'translateX(' + (-2*size) + 'px)';
         counter++;
         prev.disabled = false;
         prev.classList.remove("button-hover");
         prev.classList.add("button-hover2");
     } else if (counter === 2) {
         home.classList.add("investor-view");
+        track.style.transform = 'translateX(' + (-3*size ) + 'px)';
         counter++;
         prev.disabled = false;
         prev.classList.add("button-hover2");
 
     } else if (counter === 3) {
         home.classList.remove("investor-view", "mentor-view");
+        track.style.transition = "none";
+        track.style.transform = 'translateX(-105%)';
         counter = 1;
         prev.disabled = true;
         prev.classList.remove("button-hover2");
@@ -47,9 +55,11 @@ prev.addEventListener("click", () => {
 
     if (counter === 3) {
         home.classList.remove("investor-view");
+        track.style.transform = 'translateX(' + (-2*size) + 'px)';
         counter--;
     } else if (counter === 2) {
         home.classList.remove("mentor-view");
+        track.style.transform = 'translateX(' + (-size) + 'px)';
         counter--;
         prev.disabled = true;
         prev.classList.remove("button-hover2");
@@ -146,10 +156,6 @@ let scene2 = new ScrollMagic.Scene({
 
 //For mobile view
 var mql2 = window.matchMedia('(max-width: 800px)');
-const track = document.querySelector(".track");
-let text = document.querySelectorAll(".track .text");
-const size = text[0].clientWidth + 20;
-console.log(size);
 if (mql2.matches) {
 
     let mobileTween = gsap.timeline();
@@ -173,8 +179,8 @@ if (mql2.matches) {
         .from(".creator1", { x: -350, rotation: 0.001, duration: 2, ease: "linear" }, '-=2')
         .to(".text1", { x: -400, rotation: 0.001, opacity: 0, duration: 1, ease: "linear" }, '-=2')
         .fromTo(".track", { x: 0, opacity: 0, rotation: 0.001 }, { x: -size, rotation: 0.001, visibility: "visible", opacity: 1, duration: 2, ease: "linear" }, '-=2')
-        .to(".left", { display: "block" }, '-=2')
-        .to(".right", { display: "block" }, '-=2')
+        .to(".right", { display: "block" })
+        .to(".left", { display: "block" })
         .to(".mouse", { display: "none" });
 
     let scene = new ScrollMagic.Scene({
