@@ -26,6 +26,7 @@ prev.classList.add("button-hover");
 
 next.addEventListener("click", () => {
     if (counter === 1) {
+        track.style.transition = "transform 1s ease-in-out";
         home.classList.add("mentor-view");
         track.style.transform = 'translateX(' + (-2*size) + 'px)';
         counter++;
